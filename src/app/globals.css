@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+h1,h2{
+  font-size: 36px;
+  font-weight: 500;
+}
+h3{
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+button{
+  cursor: pointer;
+}
+body {
+  *{
+    font-family: Montserrat,sans-serif;
+  }
+
+}
+
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}

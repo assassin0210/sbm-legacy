@@ -1,0 +1,9 @@
+dist/**
+build/**
+.husky/**
+node_modules/**
+.gitignore
+package.json
+.eslintrc.cjs
+
+src/lib/magento/graphql/__generated__.ts
