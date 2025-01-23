@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { CheckLong } from '@/assets/icon/checkLong'
 import { P16, P18, P20, P38, P48 } from '@/shared/ui/Typography'
 
+import bullets from '../../assets/images/bullets.png'
 import desktop from '../../assets/images/Desktop.png'
 import mobile from '../../assets/images/mobile.png'
 import tablet from '../../assets/images/tablet.png'
@@ -61,8 +62,13 @@ export const TailoredMenu = () => {
         <P38 className="text-center" color="text-sbm-neutral">
           Choose and pay only for what you need.
         </P38>
+        <Image
+          className="max-w-[1200px] w-full maxMobile:hidden mx-auto mt-12"
+          src={bullets}
+          alt={'Bullets'}
+        />
 
-        <div className="grid desktop:grid-cols-3 mt-12">
+        <div className="grid desktop:grid-cols-3 mt-12 tablet:hidden">
           <div className="flex flex-col items-center">
             <Image
               width={300}

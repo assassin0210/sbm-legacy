@@ -3,6 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useRouter } from 'next-nprogress-bar'
+import { useState } from 'react'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 
 import { useFormSchema } from '@/app/15-day-free-trial/components/useFormSchema'
@@ -67,8 +68,8 @@ export const StartedForm = () => {
     state: '',
     username: '',
     billingPlan: bilingOptions[0].value,
-    represent: '',
-    described: '',
+    represent: representOptions[0].value,
+    described: describeOptions[0].value,
     captchaToken: '',
     agree: false,
   }
@@ -77,9 +78,10 @@ export const StartedForm = () => {
     defaultValues: defaultValues,
     resolver: zodResolver(schema),
   })
-
+  const [error, setError] = useState('')
   const register = useRegister()
   const onSubmit = async (data: IForm) => {
+    setError('')
     const recaptchaToken = await window.grecaptcha.execute(
       process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
       { action: 'submit' }
@@ -103,9 +105,14 @@ export const StartedForm = () => {
       captchaToken: recaptchaToken,
     }
 
-    register.mutateAsync(result).then(() => {
-      router.push(page_links.appLogin)
-    })
+    register
+      .mutateAsync(result)
+      .then(() => {
+        router.push(page_links.appLogin)
+      })
+      .catch(() => {
+        setError('Server Error. Please try again')
+      })
   }
 
   return (
@@ -199,7 +206,7 @@ export const StartedForm = () => {
             <FormSelect
               className="col-span-1"
               name="represent"
-              options={manageOptions}
+              options={representOptions}
             />
           </article>
 
@@ -260,6 +267,8 @@ export const StartedForm = () => {
         >
           Start your free trial
         </Button>
+
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </form>
     </FormProvider>
   )
@@ -282,6 +291,22 @@ const manageOptions = [
     label: 'up to 5000 riders',
     value: '3',
   },
+]
+// School/School District
+// Head Strat
+// Camp
+// Adult Center
+// Transportation provider
+// Consulting
+// Other
+const representOptions = [
+  { label: 'School/School District', value: 'School/School District' },
+  { label: 'Head Start', value: 'Head Start' },
+  { label: 'Camp', value: 'Camp' },
+  { label: 'Adult Center', value: 'Adult Center' },
+  { label: 'Transportation provider', value: 'Transportation provider' },
+  { label: 'Consulting', value: 'Consulting' },
+  { label: 'Other', value: 'Other' },
 ]
 
 const describeOptions = [

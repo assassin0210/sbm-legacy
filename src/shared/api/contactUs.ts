@@ -14,7 +14,9 @@ export interface IRegistrationBody {
 
 export const contactUsRequest = async (data: IRegistrationBody) => {
   try {
-    const response = await instance.postForm<any>(api_links.contactUs, data)
+    const response = await instance.postForm<any>(api_links.contactUs, {
+      ContactForm: data,
+    })
     return response.data
   } catch (e) {
     return Promise.reject(e)

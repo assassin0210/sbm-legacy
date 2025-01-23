@@ -98,7 +98,7 @@ export const UploadFile = forwardRef<
       ) : (
         <UploadSection
           open={open}
-          error={'123'}
+          error={error}
           getInputProps={getInputProps}
           getRootProps={getRootProps}
           isDragActive={isDragActive}
