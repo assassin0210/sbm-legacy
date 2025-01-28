@@ -274,31 +274,6 @@ export const StartedForm = () => {
   )
 }
 
-const manageOptions = [
-  {
-    label: 'up to 500 riders',
-    value: '0',
-  },
-  {
-    label: 'up to 1000 riders',
-    value: '1',
-  },
-  {
-    label: 'up to 2500 riders',
-    value: '2',
-  },
-  {
-    label: 'up to 5000 riders',
-    value: '3',
-  },
-]
-// School/School District
-// Head Strat
-// Camp
-// Adult Center
-// Transportation provider
-// Consulting
-// Other
 const representOptions = [
   { label: 'School/School District', value: 'School/School District' },
   { label: 'Head Start', value: 'Head Start' },

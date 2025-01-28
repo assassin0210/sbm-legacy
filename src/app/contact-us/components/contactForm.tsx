@@ -1,7 +1,7 @@
 'use client'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { clsx } from 'clsx'
-import { isValidPhoneNumber } from 'libphonenumber-js'
+import { CountryCode, isValidPhoneNumber } from 'libphonenumber-js'
 import React from 'react'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -29,76 +29,30 @@ interface IForm {
   }
 }
 
-export const ContactForm = () => {
-  const schema = z
+const contactFormSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z
+    .string()
+    .min(1, 'Email is required')
+    .refine(isValidEmail, 'Invalid email'),
+  file: z.any(),
+  body: z.string().min(1, 'This field is required'),
+  phone: z
     .object({
-      name: z.string(),
-      email: z.string(),
-      file: z.any(),
-      body: z.string(),
-      phone: z
-        .object({
-          phoneNumber: z.any().nullable().optional(),
-          phoneCode: z.any().optional(),
-        })
-        .optional(),
+      phoneNumber: z.string().min(1, 'Phone number is required'),
+      phoneCode: z.string().min(1, 'Phone code is required'),
     })
-    .superRefine((form, ctx) => {
-      const email = form.email
-
-      const phone = form?.phone
-
-      if (!form.name) {
+    .superRefine(({ phoneNumber, phoneCode }, ctx) => {
+      if (!isValidPhoneNumber(phoneNumber, phoneCode as CountryCode)) {
         ctx.addIssue({
           code: 'custom',
-          path: ['name'],
-          message: 'Name is required',
+          message: 'Invalid phone number',
         })
       }
-      if (!form.body) {
-        ctx.addIssue({
-          code: 'custom',
-          path: ['body'],
-          message: 'Body is required',
-        })
-      }
+    }),
+})
 
-      if (!phone?.phoneNumber || !phone?.phoneCode) {
-        ctx.addIssue({
-          code: 'custom',
-          path: ['phone'],
-          message: 'Phone is required',
-        })
-      } else {
-        const isValidPhone = isValidPhoneNumber(
-          phone?.phoneNumber,
-          phone?.phoneCode
-        )
-        if (!isValidPhone) {
-          ctx.addIssue({
-            code: 'custom',
-            path: ['phone'],
-            message: 'Invalid phone number',
-          })
-        }
-      }
-      if (!email) {
-        ctx.addIssue({
-          code: 'custom',
-          path: ['email'],
-          message: 'Email is required',
-        })
-      } else {
-        if (!isValidEmail(email)) {
-          ctx.addIssue({
-            code: 'custom',
-            path: ['email'],
-            message: 'Invalid email',
-          })
-        }
-      }
-    })
-
+export const ContactForm = () => {
   const methods = useForm<IForm>({
     defaultValues: {
       name: '',
@@ -107,7 +61,7 @@ export const ContactForm = () => {
       body: '',
       phone: defaultPhoneValue,
     },
-    resolver: zodResolver(schema),
+    resolver: zodResolver(contactFormSchema),
   })
 
   const postContactUs = useContactUs()
@@ -128,10 +82,10 @@ export const ContactForm = () => {
       verifyCode: recaptchaToken,
     }
 
-    postContactUs.mutateAsync(body).then(() => {
-      methods.reset()
-    })
+    await postContactUs.mutateAsync(body)
+    methods.reset()
   }
+
   const isLoading = postContactUs.isPending
 
   return (
@@ -158,38 +112,29 @@ export const ContactForm = () => {
 
         <button
           disabled={isLoading}
-          className=" relative h-12 mx-auto mt-5 w-fit block px-12 py-3 shadow-buttonShadow rounded-full"
+          className="relative h-12 mx-auto mt-5 w-fit block px-12 py-3 shadow-buttonShadow rounded-full"
           type="submit"
         >
           <P14
-            className={clsx('uppercase', {
-              'opacity-0': isLoading,
-            })}
+            className={clsx('uppercase', { 'opacity-0': isLoading })}
             weight="font-bold"
           >
             submit
           </P14>
           {isLoading && (
-            <div
-              className={clsx(
-                'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-inherit'
-              )}
-            >
-              <Spinner
-                width={25}
-                height={25}
-                className={clsx('animate-spin')}
-              />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-inherit">
+              <Spinner width={25} height={25} className="animate-spin" />
             </div>
           )}
         </button>
+
         {postContactUs.isError && (
           <ErrorMessage className="text-center">
             Server Error. Please try again
           </ErrorMessage>
         )}
         {postContactUs.isSuccess && (
-          <P16 className="text-green-600 text-center">
+          <P16 weight="font-medium" className="text-sbm-green text-center mt-2">
             Thank you! Your message has been successfully sent.
           </P16>
         )}
