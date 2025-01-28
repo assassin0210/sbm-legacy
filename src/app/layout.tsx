@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script
-          src={`https://www.google.com/recaptcha/api.js?render=6LdrOacqAAAAAH5zECAEhdzoXs3Qp_1ZXBaVU7JI`}
+          src={`https://www.google.com/recaptcha/api.js?render=6LcgVZ8qAAAAAKdEFXGpJ6hlYpT9nsTGxUDYOR6D`}
           async
           defer
         ></script>

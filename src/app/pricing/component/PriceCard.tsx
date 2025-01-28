@@ -3,6 +3,7 @@ import { CustomLink } from '@/shared/ui/CustomLink'
 import { P16, P18, P20, P24, P28, P48, P58 } from '@/shared/ui/Typography'
 
 export const PriceCard = ({ items }: { items: IPricing }) => {
+  const type = items.label.split(' ')
   return (
     <article className="border border-black bg-sbm-white pb-8 w-full">
       <div className="bg-sbm-primary-10 py-2 px-2">
@@ -14,7 +15,7 @@ export const PriceCard = ({ items }: { items: IPricing }) => {
           SCHOOL BUS MANAGER
         </P18>
         <p className="mt-2 mx-auto font-semibold bg-sbm-white w-fit h-fit text-sbm-primary-10  px-5 text-[28px] leading-[32px] uppercase">
-          {items.type}
+          {type[type.length - 1]}
         </p>
       </div>
       <P18 className="text-center pt-5" weight="font-semibold">
