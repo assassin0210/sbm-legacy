@@ -1,14 +1,4 @@
-import {
-  P14,
-  P16,
-  P18,
-  P24,
-  P28,
-  P30,
-  P34,
-  P38,
-  P48,
-} from '@/shared/ui/Typography'
+import { P14, P30, P38 } from '@/shared/ui/Typography'
 
 export const WhatSchoolBusManager = () => {
   return (

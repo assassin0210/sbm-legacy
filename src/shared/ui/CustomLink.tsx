@@ -5,7 +5,6 @@ import React, { FC, HTMLProps } from 'react'
 import {
   buttonVariants,
   buttonVariantsV2,
-  variantsV2,
 } from '@/shared/cvaConfigs/buttonConfig'
 import {
   IButtonVariant,
@@ -44,7 +43,7 @@ interface IPropsV2 {
 export const CustomLinkV2: FC<
   LinkProps & Omit<HTMLProps<HTMLAnchorElement>, 'size'> & IPropsV2
 > = (props) => {
-  const { className, variant = 'linkBlack', size, children, ...rest } = props
+  const { className, variant = 'linkBlack', children, ...rest } = props
   return (
     <Link
       {...rest}

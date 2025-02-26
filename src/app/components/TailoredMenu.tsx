@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { CheckLong } from '@/assets/icon/checkLong'
-import { P16, P18, P20, P30, P38, P48 } from '@/shared/ui/Typography'
+import { P16, P18, P20, P30, P38 } from '@/shared/ui/Typography'
 
 import bullets from '../../assets/images/bullets.png'
 import desktop from '../../assets/images/Desktop.png'
