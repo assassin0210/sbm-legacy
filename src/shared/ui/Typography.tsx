@@ -11,6 +11,7 @@ type IProps = ClassAttributes<HTMLParagraphElement> &
   }
 
 export type IWeight =
+  | 'font-light'
   | 'font-black'
   | 'font-extrabold'
   | 'font-medium'
@@ -78,7 +79,33 @@ export const P48 = (props: IProps) => {
   return (
     <Tag
       className={clsx(
-        'maxMobile:!text-[40px] text-[48px] leading-normal',
+        'maxMobile:!text-[40px] text-[48px] leading-[36px]',
+        weight,
+        color,
+        className
+      )}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  )
+}
+
+export const P52 = (props: IProps) => {
+  const {
+    className = '',
+    children,
+    weight = 'font-normal' as IWeight,
+    color = 'text-sbm-neutral',
+    as,
+    ...rest
+  } = props
+
+  const Tag = as ? as : 'p'
+  return (
+    <Tag
+      className={clsx(
+        'maxMobile:!text-[40px] text-[52px] leading-[36px]',
         weight,
         color,
         className
@@ -115,6 +142,28 @@ export const P38 = (props: IProps) => {
     </Tag>
   )
 }
+
+export const P42 = (props: IProps) => {
+  const {
+    className = '',
+    children,
+    weight = 'font-normal' as IWeight,
+    color = 'text-sbm-neutral',
+    as,
+    ...rest
+  } = props
+
+  const Tag = as ? as : 'p'
+  return (
+    <Tag
+      className={clsx('] text-[42px] leading-normal', weight, color, className)}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  )
+}
+
 export const P34 = (props: IProps) => {
   const {
     className = '',
@@ -172,15 +221,19 @@ export const P24 = (props: IProps) => {
     children,
     weight = 'font-normal' as IWeight,
     color = 'text-sbm-neutral',
+    as,
     ...rest
   } = props
+
+  const Tag = as ? as : 'p'
+
   return (
-    <p
+    <Tag
       className={clsx('text-2xl leading-8', weight, color, className)}
       {...rest}
     >
       {children}
-    </p>
+    </Tag>
   )
 }
 

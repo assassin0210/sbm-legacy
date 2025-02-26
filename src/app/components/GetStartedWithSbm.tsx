@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
 import { page_links } from '@/shared/constants/page_links'
-import { CustomLink } from '@/shared/ui/CustomLink'
-import { P58 } from '@/shared/ui/Typography'
+import { CustomLinkV2 } from '@/shared/ui/CustomLink'
+import { P42 } from '@/shared/ui/Typography'
 
 import iStok from '../../assets/images/getStartedWithSBM.png'
 
 export const GetStartedWithSbm = () => {
   return (
-    <section className="relative h-[740px] desktop:h-[1000px]">
-      <div className="absolute left-0 top-0 w-full h-[740px] desktop:h-[1000px] overflow-hidden">
+    <section className="relative h-[500px]  laptop:h-[800px]">
+      <div className="absolute left-0 top-0 w-full h-[500px] laptop:h-[800px]  overflow-hidden">
         <Image
           className="object-cover object-center w-full h-full"
           src={iStok.src}
@@ -20,31 +20,29 @@ export const GetStartedWithSbm = () => {
         />
       </div>
       <div className="container relative z-10">
-        <P58
+        <P42
           color="text-sbm-white"
-          className="block leading-[60px] text-center pt-24"
+          className="block text-center pt-12 laptop:pt-24 maxTablet:text-[32px] maxTablet:leading-[40px]"
           as="h2"
           weight="font-normal"
         >
           To Get Started with School Bus Manager
-        </P58>
-        <div className="flex justify-center flex-wrap gap-4 mt-24">
-          <CustomLink
+        </P42>
+        <div className="flex justify-center flex-wrap gap-4 mt-[60px]">
+          <CustomLinkV2
             href={page_links.trial}
-            className="uppercase pt-[14px]"
-            size="medium"
-            variant="primary"
+            variant="blue"
+            className="uppercase py-4 h-fit px-8"
           >
             free 15 day trial
-          </CustomLink>
-          <CustomLink
+          </CustomLinkV2>
+          <CustomLinkV2
             href="tel:+18886676883"
-            className="uppercase pt-[14px]"
-            size="medium"
+            className="uppercase py-4 h-fit px-8"
             variant="black"
           >
             request a demo
-          </CustomLink>
+          </CustomLinkV2>
         </div>
       </div>
     </section>

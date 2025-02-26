@@ -29,6 +29,7 @@ export const colors = {
   'sbm-neutral-100': '#999999',
   'sbm-neutral-200': '#EBEBEB',
   'sbm-neutral-300': '#5F6D7D',
+  'sbm-neutral-800': '#f6f8f9',
   'sbm-neutral-900': '#f9fafb',
   'sbm-green': '#5DB85B',
   'sbm-green-10': '#3a7539',
@@ -98,7 +99,9 @@ const config: Config = {
         laptopRange: { min: '992px', max: '1199px' },
 
         desktop: '1200px',
-        maxDesktop: { max: '1570px' },
+        maxDesktop: { max: '1539px' },
+
+        extraDesktop: '1540px',
       },
     },
   },

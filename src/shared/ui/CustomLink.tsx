@@ -2,8 +2,16 @@ import { clsx } from 'clsx'
 import Link, { LinkProps } from 'next/link'
 import React, { FC, HTMLProps } from 'react'
 
-import { buttonVariants } from '@/shared/cvaConfigs/buttonConfig'
-import { IButtonVariant, TButtonSize } from '@/shared/types/common'
+import {
+  buttonVariants,
+  buttonVariantsV2,
+  variantsV2,
+} from '@/shared/cvaConfigs/buttonConfig'
+import {
+  IButtonVariant,
+  IButtonVariantV2,
+  TButtonSize,
+} from '@/shared/types/common'
 
 interface IProps {
   variant?: IButtonVariant
@@ -21,6 +29,29 @@ export const CustomLink: FC<
         variant,
         size,
         className: clsx('', className || ''),
+      })}
+    >
+      {children}
+    </Link>
+  )
+}
+
+interface IPropsV2 {
+  variant?: IButtonVariantV2
+  size?: TButtonSize
+}
+
+export const CustomLinkV2: FC<
+  LinkProps & Omit<HTMLProps<HTMLAnchorElement>, 'size'> & IPropsV2
+> = (props) => {
+  const { className, variant = 'linkBlack', size, children, ...rest } = props
+  return (
+    <Link
+      {...rest}
+      className={buttonVariantsV2({
+        variant: variant,
+        // size,
+        className: clsx(className),
       })}
     >
       {children}

@@ -26,6 +26,7 @@ const Component = () => {
   const searchParams = useSearchParams()
   const scrollId = searchParams.get('id')
   const router = useRouter()
+
   useEffect(() => {
     if (scrollId) {
       handleScrollToSection(scrollId)

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { CheckLong } from '@/assets/icon/checkLong'
-import { P16, P18, P20, P38, P48 } from '@/shared/ui/Typography'
+import { P16, P18, P20, P30, P38, P48 } from '@/shared/ui/Typography'
 
 import bullets from '../../assets/images/bullets.png'
 import desktop from '../../assets/images/Desktop.png'
@@ -47,28 +47,31 @@ export const TailoredMenu = () => {
       <div
         className="absolute left-0 top-0 w-full h-full"
         style={{
-          background: `linear-gradient(to bottom, #50D0F3 10%,  #005D88 80%)`,
+          background: `linear-gradient(180deg, #75cdef 0%, #265c84 100%);`,
         }}
       ></div>
-      <div className="container relative z-10 pt-32 pb-20">
-        <P48
-          weight="font-bold"
-          color="text-sbm-white"
-          className="text-center"
+      <div className="container relative z-10 py-8 laptop:py-16">
+        <P38
+          weight="font-semibold"
           as="h2"
+          color="text-sbm-white"
+          className=" text-center"
         >
           A Tailored Menu for Transportation Operations
-        </P48>
-        <P38 className="text-center" color="text-sbm-neutral">
-          Choose and pay only for what you need.
         </P38>
-        <Image
-          className="max-w-[1200px] w-full maxMobile:hidden mx-auto mt-12"
-          src={bullets}
-          alt={'Bullets'}
-        />
+        <P30
+          className="text-center mt-1"
+          weight="font-normal"
+          as="h3"
+          color="text-sbm-neutral"
+        >
+          Choose and pay only for what you need.
+        </P30>
+        <div className="max-w-[940px] mx-auto mt-12 w-full maxMobile:hidden">
+          <Image className=" w-full -ml-4 " src={bullets} alt={'Bullets'} />
+        </div>
 
-        <div className="grid desktop:grid-cols-3 mt-12 tablet:hidden">
+        <div className="grid desktop:grid-cols-3 gap-y-8 mt-12 tablet:hidden">
           <div className="flex flex-col items-center">
             <Image
               width={300}

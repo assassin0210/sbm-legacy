@@ -1,18 +1,18 @@
 import Image from 'next/image'
 
 import { page_links } from '@/shared/constants/page_links'
-import { CustomLink } from '@/shared/ui/CustomLink'
-import { P18, P34, P58 } from '@/shared/ui/Typography'
+import { CustomLinkV2 } from '@/shared/ui/CustomLink'
+import { P16, P24, P52 } from '@/shared/ui/Typography'
 
 import { colors } from '../../../tailwind.config'
 import sbmMap from '../../assets/images/sbm-map.png'
 
 export const SchoolBusRouting = () => {
   return (
-    <section className="relative  overflow-hidden pb-12 laptop:h-[1000px]">
-      <div className="absolute left-0 top-0 w-full h-[1000px] overflow-hidden">
+    <section className="relative  overflow-hidden pb-12 h-[800px]  laptop:h-[850px]">
+      <div className="absolute left-0 top-0 w-full h-[800px]  laptop:h-[850px] overflow-hidden">
         <Image
-          className="object-cover object-center w-full h-full"
+          className="object-cover object-top  w-full h-full"
           src={sbmMap.src}
           width={2000}
           height={800}
@@ -21,74 +21,72 @@ export const SchoolBusRouting = () => {
         />
 
         <div
-          className="absolute left-0 top-0 w-full h-full"
+          className="absolute left-0 top-0 w-full h-full "
           style={{
-            background: `linear-gradient(to bottom, ${colors['sbm-secondary']} 45%, transparent 100%, transparent 100%)`,
+            background: `linear-gradient(to bottom, ${colors['sbm-secondary']} 55%, transparent 80%, transparent 90%)`,
           }}
         ></div>
       </div>
       <div className="container relative z-10 pt-20">
-        <h1 className=" mt-20 laptop:mt-32">
-          <P58
+        <h1 className="max-w-[1170px] w-fit mx-auto mt-12 laptop:mt-24 ">
+          <P52
             color="text-sbm-white"
-            className="block leading-[60px]"
+            className="block leading-[60px] maxLaptop:text-[32px] maxLaptop:leading-[44px]"
             as="span"
-            weight="font-normal"
+            weight="font-light"
           >
             School Bus Routing, Tracking
-          </P58>
-          <P34
+          </P52>
+          <P24
             color="text-sbm-white"
-            className="tablet:pl-[170px]"
+            className="tablet:pl-[20px]"
             as="span"
-            weight="font-normal"
+            weight="font-light"
           >
             and
-          </P34>{' '}
-          <P58
+          </P24>{' '}
+          <P52
             color="text-sbm-white"
-            className="leading-[60px]"
+            className="leading-[60px] maxLaptop:text-[32px] maxLaptop:leading-[44px]"
             as="span"
-            weight="font-normal"
+            weight="font-light"
           >
             Communication
-          </P58>{' '}
-          <P58
-            className="leading-[60px] bg-sbm-neutral px-2 rounded whitespace-nowrap"
+          </P52>{' '}
+          <P52
+            className=" whitespace-nowrap [filter:drop-shadow(0px_0px_10px_rgba(255,255,255,1))]"
             color="text-sbm-primary"
             as="span"
-            weight="font-medium"
+            weight="font-light"
           >
             Made Easy!
-          </P58>
+          </P52>
         </h1>
-        <P18
+        <P16
           color="text-sbm-white"
-          className="text-center !font-light block mt-12"
+          className="text-center max-w-[1170px] mx-auto !font-light block mt-8 laptop:mt-12"
         >
           Discover a comprehensive, dynamic solution for building and tracking
           routes designed for any business needing optimized routes in minutes!
           Our software offers fully automated tracking, attendance management,
           and much more.
-        </P18>
+        </P16>
 
         <div className="flex justify-center flex-wrap gap-4 mt-8">
-          <CustomLink
+          <CustomLinkV2
             href={page_links.trial}
-            className="uppercase pt-[14px]"
-            size="medium"
-            variant="primary"
+            className="uppercase px-8 py-4 h-fit"
+            variant="blue"
           >
             free 15 day trial
-          </CustomLink>
-          <CustomLink
+          </CustomLinkV2>
+          <CustomLinkV2
             href="tel:+18886676883"
-            className="uppercase pt-[14px]"
-            size="medium"
+            className="uppercase py-4 h-fit px-8"
             variant="black"
           >
             request a demo
-          </CustomLink>
+          </CustomLinkV2>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import why1 from '@/assets/images/why-1.png'
-import { P16, P24, P38, P48 } from '@/shared/ui/Typography'
+import { P16, P20, P30, P38 } from '@/shared/ui/Typography'
 
 export const WhySchoolBusManager = () => {
   const items = [
@@ -24,33 +24,43 @@ export const WhySchoolBusManager = () => {
 
   return (
     <div
-      className="container pt-12 pb-16 laptop:py-[50px] bg-sbm-white"
+      className="container py-8 laptop:pt-12 laptop:pb-16 laptop:py-[50px] bg-sbm-white"
       id="WHY_SCHOOL_BUS_MANAGER"
     >
-      <P48
+      <P38
         weight="font-normal"
         as="h2"
         color="text-sbm-secondary"
         className=" text-center"
       >
         Why School Bus Manager?
-      </P48>
-      <P38
+      </P38>
+      <P30
         className="text-center mt-4"
         weight="font-normal"
+        as="h3"
         color="text-sbm-neutral"
       >
         Works on any computer with a web browser and an internet connection.
-      </P38>
+      </P30>
 
-      <Image className="mx-auto max-w-[680px] w-full py-10" alt="" src={why1} />
+      <Image
+        className="mx-auto max-w-[520px] w-full py-10 mt-4"
+        alt=""
+        src={why1}
+      />
 
-      <div className="grid tablet:grid-cols-3 mt-10 gap-y-4 gap-x-[30px] text-left pb-[30px] w-fit mx-auto">
+      <div className="max-w-[1000px] grid tablet:grid-cols-3 mt-10 gap-y-4 gap-x-[54px] text-left pb-[30px] w-fit mx-auto">
         {items.map((el, index) => (
           <article key={index} className="tablet:max-w-[370px]">
-            <P24 as="h3" color="text-sbm-secondary" className="">
+            <P20
+              as="h3"
+              weight="font-medium"
+              color="text-sbm-secondary"
+              className=""
+            >
               {el.title}
-            </P24>
+            </P20>
             <P16 color="text-sbm-neutral-100" className="tracking-normal mt-4">
               {el.subtitle}
             </P16>

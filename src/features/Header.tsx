@@ -1,5 +1,4 @@
 'use client'
-import * as Popover from '@radix-ui/react-popover'
 import { clsx } from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,9 +7,10 @@ import { useRouter } from 'next-nprogress-bar'
 import { useState } from 'react'
 
 import { BurgerMenu } from '@/assets/icon/burderMenu'
+import { HeaderMenu } from '@/features/HeaderMenu'
 import { page_links } from '@/shared/constants/page_links'
-import { Button } from '@/shared/ui/Button'
-import { CustomLink } from '@/shared/ui/CustomLink'
+import { ButtonV2 } from '@/shared/ui/Button'
+import { CustomLinkV2 } from '@/shared/ui/CustomLink'
 
 import sbmLogo3 from '../assets/images/sbm_logo-3.png'
 
@@ -40,9 +40,9 @@ export const Header = () => {
   }
 
   return (
-    <header className="bg-sbm-white fixed top-0 w-full left-0 z-[999] h-[80px] px-5 py-2 flex items-center shadow-header">
+    <header className="px-5 extraDesktop:px-[32px] grid  grid-cols-[auto_1fr] gap-x-10 extraDesktop:gap-x-[60px]  bg-sbm-white fixed top-0 w-full left-0 z-[999] h-[80px] shadow-header">
       <Link
-        className="relative h-full flex-shrink-0 flex w-[166px] laptop:w-[233px] mr-4 desktop:mr-20"
+        className="relative h-full flex-shrink-0 flex w-[166px] laptop:w-[180px]"
         href="/"
       >
         <Image
@@ -54,51 +54,29 @@ export const Header = () => {
           priority
         />
       </Link>
-      <div className="flex flex-wrap gap-x-4 gap-y-2 items-center justify-end maxLaptop:ml-auto desktop:justify-between w-full">
-        <div className="flex gap-4 maxLaptop:hidden ml-auto">
+
+      <div className="extraDesktop:hidden flex items-center ">
+        <div className=" maxLaptop:hidden flex items-center w-full gap-4 maxMobile:hidden ml-auto">
           <FirstLineLinks />
         </div>
-        <div className="gap-4 flex items-center ml-auto maxMobile:hidden">
+        <div className="ml-auto">
+          <HeaderMenu className="maxMobile:hidden" />
+          <MobileNavbar
+            toggleVisibility={toggleVisibility}
+            isVisible={isVisible}
+          />
+        </div>
+      </div>
+
+      <div className="maxDesktop:hidden flex flex-col justify-end extraDesktop:grid laptop:grid-cols-1 extraDesktop:grid-cols-[1fr_auto] gap-x-[60px]">
+        <div className="flex items-center gap-4 maxMobile:hidden ml-auto">
+          <FirstLineLinks />
+        </div>
+        <div className="gap-4 flex items-center ml-auto maxLaptop:hidden">
           <SecondLineLinks />
         </div>
-        <HeaderMenu />
-        <MobileNavbar
-          toggleVisibility={toggleVisibility}
-          isVisible={isVisible}
-        />
       </div>
     </header>
-  )
-}
-
-const HeaderMenu = () => {
-  const [open, setOpen] = useState(false)
-
-  return (
-    <div className="maxMobile:hidden desktop:hidden  laptop:ml-8">
-      <Popover.Root open={open} onOpenChange={(v) => setOpen(v)}>
-        <Popover.Trigger className="cursor-pointer" asChild>
-          <BurgerMenu className="w-10" />
-        </Popover.Trigger>
-        <Popover.Content
-          className="bg-neutral-00 flex flex-col bg-sbm-neutral-900 gap-2 w-fit overflow-auto shadow-lg border border-neutral-05 rounded-lg p-1 z-[2]"
-          sideOffset={5}
-        >
-          <PopoverContent />
-        </Popover.Content>
-      </Popover.Root>
-    </div>
-  )
-}
-
-const PopoverContent = () => {
-  return (
-    <>
-      <FirstLineLinks />
-      <div className="tablet:hidden">
-        <SecondLineLinks />
-      </div>
-    </>
   )
 }
 
@@ -123,7 +101,7 @@ const MobileNavbar = ({
             }
           )}
         >
-          <div className=" h-fit w-full flex flex-col gap-2 py-2">
+          <div className="h-fit w-full flex items-center flex-col gap-2 py-2">
             <FirstLineLinks />
             <SecondLineLinks />
           </div>
@@ -145,45 +123,40 @@ const FirstLineLinks = () => {
 
   return (
     <>
-      <Button
+      <ButtonV2
         onClick={() =>
           handleScrollToSection('WHAT_SCHOOL_BUS_MANAGER', sideEffect)
         }
-        className="uppercase font-bold tablet:ml-auto w-fit"
-        variant="blackGhost"
+        variant="linkBlack"
       >
         What’s School Bus Manager
-      </Button>
-      <Button
+      </ButtonV2>
+      <ButtonV2
         onClick={() =>
           handleScrollToSection('WHY_SCHOOL_BUS_MANAGER', sideEffect)
         }
-        className="uppercase font-bold w-fit"
-        variant="grayGhost"
+        variant="linkGray"
       >
         Why School Bus Manager
-      </Button>
-      <Button
+      </ButtonV2>
+      <ButtonV2
         onClick={() => handleScrollToSection('FEATURES', sideEffect)}
-        className="uppercase font-bold w-fit"
-        variant="grayGhost"
+        variant="linkGray"
       >
         Features
-      </Button>
-      <Button
+      </ButtonV2>
+      <ButtonV2
         onClick={() => handleScrollToSection('PRODUCTS', sideEffect)}
-        className="uppercase font-bold w-fit"
-        variant="grayGhost"
+        variant="linkGray"
       >
         Products
-      </Button>
-      <CustomLink
-        className="uppercase font-bold"
-        variant="grayGhost"
-        href={page_links.pricing}
-      >
+      </ButtonV2>
+      <CustomLinkV2 variant="linkGray" href={page_links.pricing}>
         Pricing
-      </CustomLink>
+      </CustomLinkV2>
+      <CustomLinkV2 variant="blue" href={page_links.trial}>
+        free trial
+      </CustomLinkV2>
     </>
   )
 }
@@ -191,37 +164,23 @@ const FirstLineLinks = () => {
 const SecondLineLinks = () => {
   return (
     <>
-      <CustomLink
-        className="uppercase font-bold "
-        size="small"
-        variant="primary"
-        href={page_links.trial}
-      >
-        free trial
-      </CustomLink>
-      <CustomLink
-        className="font-bold"
-        variant="secondaryGhost"
+      <CustomLinkV2
+        className="normal-case"
+        variant="linkOrange"
         href={page_links.contactUs}
       >
         Contact Us
-      </CustomLink>
-      <CustomLink
-        href={'tel:+18886676883'}
-        className=" font-bold"
-        variant="secondaryGhost"
-      >
+      </CustomLinkV2>
+      <CustomLinkV2 href={'tel:+18886676883'} variant="linkOrange">
         1.888.66.ROUTE
-      </CustomLink>
-      <CustomLink
-        className="font-bold "
-        size="small"
-        variant="secondary"
+      </CustomLinkV2>
+      <CustomLinkV2
+        variant="orange"
         target="_blank"
         href={'https://app.schoolbusmanager.com/'}
       >
         Sign In
-      </CustomLink>
+      </CustomLinkV2>
     </>
   )
 }
