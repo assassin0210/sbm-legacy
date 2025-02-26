@@ -47,7 +47,7 @@ export const TailoredMenu = () => {
       <div
         className="absolute left-0 top-0 w-full h-full"
         style={{
-          background: `linear-gradient(180deg, #75cdef 0%, #265c84 100%);`,
+          background: `linear-gradient(180deg, #75cdef 0%, #265c84 100%)`,
         }}
       ></div>
       <div className="container relative z-10 py-8 laptop:py-16">
