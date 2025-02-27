@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { PageLayout } from '@/app/components/PageLayout'
 import cpLogo from '@/assets/images/cp_logo.svg'
 import { SalesAndSupport } from '@/shared/components/SalesAndSupport'
-import { P16, P24, P30, P38 } from '@/shared/ui/Typography'
+import { P16, P24, P38 } from '@/shared/ui/Typography'
 
 import exportImg from '../../assets/images/cp_export.png'
 import saveImg from '../../assets/images/cp_save_as.png'

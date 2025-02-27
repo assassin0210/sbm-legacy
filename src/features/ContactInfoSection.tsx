@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 
 import { CustomLink } from '@/shared/ui/CustomLink'
-import { P16, P20, P24, P38, P48 } from '@/shared/ui/Typography'
+import { P16, P20, P38 } from '@/shared/ui/Typography'
 
 export const ContactInfoSection = ({
   title,
