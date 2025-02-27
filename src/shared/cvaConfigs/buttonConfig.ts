@@ -37,10 +37,10 @@ export const variantsV2 = {
   linkGray: 'text-sbm-neutral-100 hover:text-sbm-secondary ',
   linkOrange: 'text-sbm-orange-20 hover:text-sbm-black ',
   black:
-    'px-3 py-2.5 text-sbm-white hover:text-sbm-secondary  bg-sbm-neutral rounded-full text-sbm-white hover:bg-white hover:text-sbm-blue-10',
-  blue: 'px-3 py-2.5 text-sbm-neutral hover:text-sbm-secondary  bg-sbm-blue-10 rounded-full text-sbm-white hover:bg-white hover:text-sbm-blue-10',
+    'px-3 py-1.5 text-sbm-white hover:text-sbm-secondary  bg-sbm-neutral rounded-full text-sbm-white hover:bg-white hover:text-sbm-blue-10',
+  blue: 'px-3 py-1.5 text-sbm-neutral hover:text-sbm-secondary  bg-sbm-blue-10 rounded-full text-sbm-white hover:bg-white hover:text-sbm-blue-10',
   orange:
-    'px-3 py-2.5 text-sbm-white hover:text-sbm-secondary  bg-sbm-secondary rounded-full text-sbm-white hover:bg-white hover:text-sbm-orange-20',
+    'px-3 py-1.5 text-sbm-white hover:text-sbm-secondary  bg-sbm-secondary rounded-full text-sbm-white hover:bg-white hover:text-sbm-orange-20',
 
   // linkOrange: '!px-5 font-normal text-sbm-orange-20 hover:text-sbm-black',
   // linkBlack: '!px-5 font-normal text-sbm-black hover:text-sbm-orange-20',

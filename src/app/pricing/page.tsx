@@ -7,7 +7,7 @@ import { ContactInfoSection } from '@/features/ContactInfoSection'
 import { queryPricing } from '@/shared/api/getPricing'
 import { page_links } from '@/shared/constants/page_links'
 import { CustomLink } from '@/shared/ui/CustomLink'
-import { P14, P16, P20, P34, P38, P48 } from '@/shared/ui/Typography'
+import { P14, P16, P24, P38 } from '@/shared/ui/Typography'
 
 import routingPlatform from '../../assets/images/routingPlatform.png'
 import routingPlatformMobile from '../../assets/images/routingPlatformMobile.png'
@@ -28,22 +28,27 @@ const Pricing = async () => {
 
   return (
     <div className="">
-      <section className="bg-sbm-neutral-900 py-12 tablet:py-20">
-        <div className="container mt-28">
-          <P48 color="text-sbm-secondary" className="text-center" as="h1">
+      <section className="bg-sbm-neutral-900 pt-6 pb-16">
+        <div className="container-v2 mt-28">
+          <P38
+            weight="font-semibold"
+            color="text-sbm-secondary"
+            className="text-center"
+            as="h1"
+          >
             Start with School Bus Manager risk FREE for 15 days, then choose the
             perfect plan for you.
-          </P48>
-          <P34 className="text-center mt-10" weight="font-bold" as="h2">
+          </P38>
+          <P24 className="text-center mt-10" weight="font-semibold" as="h2">
             All School Bus Manager plans include:
-          </P34>
+          </P24>
           <div className="w-fit mx-auto grid laptop:grid-cols-2 mt-10 gap-x-10">
             <ul className="flex flex-col gap-1">
               {data['1'].map((el) => (
                 <li className="grid grid-cols-[auto_1fr] gap-1" key={el}>
-                  <CheckLong className="flex-shrink-0 inline" />{' '}
+                  <CheckLong className="flex-shrink-0 inline text-sbm-primary" />{' '}
                   <P14
-                    weight="font-bold"
+                    weight="font-semibold"
                     className="uppercase leading-normal inline"
                   >
                     {el}
@@ -54,7 +59,7 @@ const Pricing = async () => {
             <ul className="flex flex-col gap-1">
               {data['2'].map((el) => (
                 <li className="grid grid-cols-[auto_1fr] gap-1" key={el}>
-                  <CheckLong className="flex-shrink-0 inline" />{' '}
+                  <CheckLong className="flex-shrink-0 inline text-sbm-primary" />{' '}
                   <P14
                     weight="font-bold"
                     className="uppercase leading-normal inline"
@@ -67,9 +72,9 @@ const Pricing = async () => {
           </div>
         </div>
       </section>
-      <section className="container pt-12">
+      <section className="container-v2 pt-12">
         <P38
-          weight="font-bold"
+          weight="font-semibold"
           color="text-sbm-primary"
           className="text-center"
         >
@@ -80,7 +85,7 @@ const Pricing = async () => {
             <PriceCard key={index} items={el} />
           ))}
         </div>
-        <P16
+        <P14
           className="text-center max-w-[1130px] mx-auto mt-10 leading-[20px]"
           color="text-sbm-neutral-300"
           weight="font-semibold"
@@ -89,22 +94,22 @@ const Pricing = async () => {
           the annual price is divided by 12. We do not sell monthly plans. All
           new subsciptions and renewals require a 12-month minimum commitment.
           We do not prorate. We do not refund.
-        </P16>
-        <P20
+        </P14>
+        <P16
           as="div"
           className="text-center mt-2"
           color="text-sbm-neutral-300"
-          weight="font-bold"
+          weight="font-semibold"
         >
           <span>If you manage more than 2500 riders please </span>
           <CustomLink
-            className="text-[20px] underline"
+            className=" text-[14px] font-bold underline"
             variant="primaryGhost"
             href={page_links.contactUs}
           >
             contact us
           </CustomLink>
-        </P20>
+        </P16>
       </section>
       <div className="bg-sbm-neutral-900 mt-20 py-16">
         <ContactInfoSection title={'Contact Sales and Support'} />
@@ -117,14 +122,14 @@ const Pricing = async () => {
           }}
         ></div>
         <Image
-          className="mx-auto max-w-[1200px] maxMobile:hidden z-10 relative container pt-4 pb-20"
+          className="mx-auto  max-w-[1200px] maxMobile:hidden z-10 relative container-v2 pt-4 pb-20"
           width={1209}
           height={945}
           src={routingPlatform}
           alt="routing software"
         />
         <Image
-          className="mx-auto max-full max-w-[550px]  tablet:hidden z-10 relative container pt-12 pb-20"
+          className="mx-auto max-full max-w-[550px]  tablet:hidden z-10 relative container-v2 pt-12 pb-20"
           width={1209}
           height={945}
           src={routingPlatformMobile}

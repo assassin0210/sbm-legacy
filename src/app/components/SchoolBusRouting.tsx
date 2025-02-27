@@ -75,14 +75,14 @@ export const SchoolBusRouting = () => {
         <div className="flex justify-center flex-wrap gap-4 mt-8">
           <CustomLinkV2
             href={page_links.trial}
-            className="uppercase px-8 py-4 h-fit"
+            className="uppercase px-8 py-3 h-fit"
             variant="blue"
           >
             free 15 day trial
           </CustomLinkV2>
           <CustomLinkV2
             href="tel:+18886676883"
-            className="uppercase py-4 h-fit px-8"
+            className="uppercase py-3 h-fit px-8"
             variant="black"
           >
             request a demo

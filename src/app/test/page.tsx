@@ -1,9 +1,12 @@
 import '../styles.css'
 
+import { notFound } from 'next/navigation'
+
 import devises from './devices.png'
 import routingPlatform from './routingPlatform.png'
 
 const Test = () => {
+  notFound()
   return (
     <div>
       <section className="section section--dark">

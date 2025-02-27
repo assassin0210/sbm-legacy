@@ -12,7 +12,7 @@ const Terms = async () => {
 
   return (
     <PageLayout title={response.title || ''}>
-      <div className="container terms">{parse(response.content || '')}</div>
+      <div className="container-v2 terms">{parse(response.content || '')}</div>
     </PageLayout>
   )
 }

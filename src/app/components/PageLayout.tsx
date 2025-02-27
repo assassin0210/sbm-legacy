@@ -37,7 +37,7 @@ export const PageLayout = ({
             }}
           ></div>
         </div>
-        <div className="container relative my-auto">
+        <div className="container-v2 relative my-auto">
           <P38
             weight="font-medium"
             as="h1"

@@ -2,8 +2,8 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { clsx } from 'clsx'
 import { CountryCode, isValidPhoneNumber } from 'libphonenumber-js'
-import React from 'react'
-import { Controller, FormProvider, useForm } from 'react-hook-form'
+import React, { useState } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { Spinner } from '@/assets/icon/spinner'
@@ -16,12 +16,11 @@ import {
 } from '@/shared/ui/PhoneInput/constants'
 import { FormPhoneInput } from '@/shared/ui/PhoneInput/PhoneInput'
 import { ErrorMessage, P14, P16 } from '@/shared/ui/Typography'
-import { UploadFile } from '@/shared/ui/UploadFile/UploadFile'
 
 interface IForm {
   name: string
   email: string
-  file: File | null
+  // file: File | null
   body: string
   phone: {
     phoneNumber: string
@@ -35,7 +34,7 @@ const contactFormSchema = z.object({
     .string()
     .min(1, 'Email is required')
     .refine(isValidEmail, 'Invalid email'),
-  file: z.any(),
+  // file: z.any(),
   body: z.string().min(1, 'This field is required'),
   phone: z
     .object({
@@ -57,7 +56,7 @@ export const ContactForm = () => {
     defaultValues: {
       name: '',
       email: '',
-      file: null,
+      // file: null,
       body: '',
       phone: defaultPhoneValue,
     },
@@ -65,12 +64,21 @@ export const ContactForm = () => {
   })
 
   const postContactUs = useContactUs()
-
+  const [loading, setLoading] = useState(false)
   const handleFormSubmit = async (data: IForm) => {
-    const recaptchaToken = await window.grecaptcha.execute(
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
-      { action: 'submit' }
-    )
+    setLoading(true)
+    const recaptchaToken = await window.grecaptcha
+      .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', {
+        action: 'submit',
+      })
+      .catch(() => {
+        setLoading(false)
+      })
+
+    if (!recaptchaToken) {
+      setLoading(false)
+      return
+    }
 
     const body: IRegistrationBody = {
       name: data.name,
@@ -78,21 +86,22 @@ export const ContactForm = () => {
       subject:
         getPhoneByCode(data.phone.phoneCode, data.phone.phoneNumber) || '',
       body: data.body,
-      file: data.file || undefined,
-      verifyCode: recaptchaToken,
+      // file: data.file || undefined,
+      verifyCode: recaptchaToken || '',
     }
 
     await postContactUs.mutateAsync(body)
+    setLoading(false)
     methods.reset()
   }
 
-  const isLoading = postContactUs.isPending
+  const isLoading = postContactUs.isPending || loading
 
   return (
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(handleFormSubmit)}
-        className="container max-w-[1170px] mt-12"
+        className=" mt-12 container-v2"
       >
         <div className="grid tablet:grid-cols-3 gap-5">
           <FormInput placeholder="Your name" name="name" />
@@ -105,10 +114,10 @@ export const ContactForm = () => {
           placeholder="Questions, comments, suggestions, or anything else you’d like to share with us..."
         />
 
-        <Controller
-          name="file"
-          render={({ field }) => <UploadFile {...field} />}
-        />
+        {/*<Controller*/}
+        {/*  name="file"*/}
+        {/*  render={({ field }) => <UploadFile {...field} />}*/}
+        {/*/>*/}
 
         <button
           disabled={isLoading}
@@ -134,7 +143,11 @@ export const ContactForm = () => {
           </ErrorMessage>
         )}
         {postContactUs.isSuccess && (
-          <P16 weight="font-medium" className="text-sbm-green text-center mt-2">
+          <P16
+            weight="font-medium"
+            color="text-sbm-green"
+            className="text-center mt-2"
+          >
             Thank you! Your message has been successfully sent.
           </P16>
         )}

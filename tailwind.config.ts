@@ -139,6 +139,35 @@ const config: Config = {
         },
       })
 
+      addComponents({
+        '.container-v2': {
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+
+          '@screen mobileRange': {
+            maxWidth: '100%',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+          },
+          '@screen tabletRange': {
+            maxWidth: '750px',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+          },
+          '@screen laptopRange': {
+            maxWidth: '970px',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+          },
+          '@screen desktop': {
+            maxWidth: '1070px',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+          },
+        },
+      })
+
       addVariant('loading', '&[data-loading="true"]')
       addVariant('error', '&[data-error="true"]')
       addVariant('dataChecked', '&[data-state="checked"]')

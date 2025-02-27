@@ -2,8 +2,9 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next-nprogress-bar'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 
 import { useFormSchema } from '@/app/15-day-free-trial/components/useFormSchema'
@@ -19,7 +20,7 @@ import {
 } from '@/shared/ui/PhoneInput/constants'
 import { FormPhoneInput } from '@/shared/ui/PhoneInput/PhoneInput'
 import { FormSelect } from '@/shared/ui/Select'
-import { ErrorMessage, P14 } from '@/shared/ui/Typography'
+import { ErrorMessage, P12, P14 } from '@/shared/ui/Typography'
 
 interface IForm {
   email: string
@@ -54,6 +55,18 @@ export const StartedForm = () => {
     value: key,
   }))
 
+  const params = useSearchParams()
+  const type = params.get('type') as string
+
+  useEffect(() => {
+    if (type) {
+      const form = document.getElementById('start-form')
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }, [])
+
   const defaultValues: IForm = {
     email: '',
     password: '',
@@ -67,7 +80,7 @@ export const StartedForm = () => {
     companyName: '',
     state: '',
     username: '',
-    billingPlan: bilingOptions[0].value,
+    billingPlan: type || bilingOptions[0].value,
     represent: representOptions[0].value,
     described: describeOptions[0].value,
     captchaToken: '',
@@ -117,7 +130,7 @@ export const StartedForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="h-fit mt-2">
+      <form onSubmit={methods.handleSubmit(onSubmit)} className="h-fit mt-6">
         <div className="grid grid-cols-2 tablet:grid-cols-6 gap-3 tablet:gap-5">
           <FormInput
             placeholder="First Name"
@@ -183,12 +196,9 @@ export const StartedForm = () => {
         </div>
         <div className="grid grid-cols-2 tablet:grid-cols-3 gap-x-3 gap-y-6 mt-6 items-centerss">
           <article>
-            <P14
-              weight="font-bold"
-              className=" uppercase maxMobile:text-[12px]"
-            >
+            <P12 weight="font-bold" className=" uppercase ">
               I manage:
-            </P14>
+            </P12>
             <FormSelect
               className="col-span-1"
               name="billingPlan"
@@ -197,12 +207,9 @@ export const StartedForm = () => {
           </article>
 
           <article>
-            <P14
-              weight="font-bold"
-              className=" uppercase maxMobile:text-[12px]"
-            >
+            <P12 weight="font-bold" className=" uppercase ">
               I represent a:
-            </P14>
+            </P12>
             <FormSelect
               className="col-span-1"
               name="represent"
@@ -211,9 +218,9 @@ export const StartedForm = () => {
           </article>
 
           <article>
-            <P14 weight="font-bold" className="uppercase maxMobile:text-[12px]">
+            <P12 weight="font-bold" className="uppercase">
               I Describe Myself As:
-            </P14>
+            </P12>
             <FormSelect
               className="col-span-1"
               name="described"

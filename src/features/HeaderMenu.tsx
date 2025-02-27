@@ -97,6 +97,7 @@ const PopoverContent = () => {
       <CustomLinkV2
         variant="linkOrange"
         target="_blank"
+        className="normal-case"
         href={'https://app.schoolbusmanager.com/'}
       >
         Sign In

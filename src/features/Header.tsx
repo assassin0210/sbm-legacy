@@ -1,4 +1,6 @@
 'use client'
+import { faKey } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clsx } from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -101,7 +103,7 @@ const MobileNavbar = ({
             }
           )}
         >
-          <div className="h-fit w-full flex items-center flex-col gap-2 py-2">
+          <div className="h-fit w-full  flex items-center flex-col gap-2 py-2">
             <FirstLineLinks />
             <SecondLineLinks />
           </div>
@@ -177,9 +179,11 @@ const SecondLineLinks = () => {
       <CustomLinkV2
         variant="orange"
         target="_blank"
+        className="flex items-center gap-3 normal-case"
         href={'https://app.schoolbusmanager.com/'}
       >
-        Sign In
+        <FontAwesomeIcon className="-rotate-135" icon={faKey} />
+        <span>Sign In</span>
       </CustomLinkV2>
     </>
   )

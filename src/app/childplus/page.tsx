@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { PageLayout } from '@/app/components/PageLayout'
 import cpLogo from '@/assets/images/cp_logo.svg'
 import { SalesAndSupport } from '@/shared/components/SalesAndSupport'
-import { P16, P18, P34 } from '@/shared/ui/Typography'
+import { P16, P24, P30, P38 } from '@/shared/ui/Typography'
 
 import exportImg from '../../assets/images/cp_export.png'
 import saveImg from '../../assets/images/cp_save_as.png'
@@ -13,7 +13,7 @@ import saveImg from '../../assets/images/cp_save_as.png'
 const Childplus = () => {
   return (
     <PageLayout className="" title="Childplus">
-      <div className="container">
+      <div className="container-v2">
         <article className=" maxMobile:flex-col flex gap-[30px]  mt-[60px] mb-10  items-center">
           <Image
             className="w-[165px] h-16"
@@ -21,9 +21,13 @@ const Childplus = () => {
             alt="Child plus partner"
           />
 
-          <h2 className="w-full block text-[30px] border-b border-gray-300 pb-2">
+          <P38
+            weight="font-medium"
+            as="h1"
+            className="w-full block border-b border-gray-300 pb-2"
+          >
             School Bus Manager is now a ChildPlus Data Exchange Partner!
-          </h2>
+          </P38>
         </article>
         <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 tablet:col-span-3">
@@ -52,22 +56,22 @@ const Childplus = () => {
                   className="maxMobile:flex-col maxMobile:items-center flex items-start gap-4"
                   key={index}
                 >
-                  <div className="flex items-center justify-center  w-[64px] h-[64px] bg-sbm-secondary rounded-full flex-shrink-0">
-                    <P34
+                  <div className="flex items-center justify-center  w-[60px] h-[60px] bg-sbm-secondary rounded-full flex-shrink-0">
+                    <P24
                       weight="font-normal"
                       color="text-sbm-white"
                       className=" pl-2"
                     >
                       {index + 1}.
-                    </P34>
+                    </P24>
                   </div>
                   <div>
-                    <P18
+                    <P16
                       className="mt-4 maxMobile:text-center"
                       weight="font-medium"
                     >
                       {el.text}
-                    </P18>
+                    </P16>
                     {el.image}
                   </div>
                 </li>

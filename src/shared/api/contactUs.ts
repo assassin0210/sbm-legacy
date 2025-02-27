@@ -9,7 +9,7 @@ export interface IRegistrationBody {
   subject: string
   body: string
   verifyCode: string
-  file: File | undefined
+  // file: File | undefined
 }
 
 export const contactUsRequest = async (data: IRegistrationBody) => {

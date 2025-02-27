@@ -32,13 +32,13 @@ export const GetStartedWithSbm = () => {
           <CustomLinkV2
             href={page_links.trial}
             variant="blue"
-            className="uppercase py-4 h-fit px-8"
+            className="uppercase py-3 h-fit px-8"
           >
             free 15 day trial
           </CustomLinkV2>
           <CustomLinkV2
             href="tel:+18886676883"
-            className="uppercase py-4 h-fit px-8"
+            className="uppercase py-3 h-fit px-8"
             variant="black"
           >
             request a demo
