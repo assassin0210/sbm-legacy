@@ -9,7 +9,7 @@ import { CheckLong } from '@/assets/icon/checkLong'
 import desktop from '@/assets/images/Desktop.png'
 import mobile from '@/assets/images/mobile.png'
 import tablet from '@/assets/images/tablet.png'
-import { P14, P16, P24, P28, P34, P38 } from '@/shared/ui/Typography'
+import { P14, P16, P24, P34 } from '@/shared/ui/Typography'
 
 export const MobileTailored = () => {
   return (
