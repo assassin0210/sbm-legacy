@@ -51,7 +51,7 @@ export const WhySchoolBusManager = () => {
         src={why1}
       />
 
-      <div className="max-w-[1100px] flex maxTablet:flex-col  mt-10 gap-y-4 gap-x-6 text-left pb-[30px] w-fit mx-auto">
+      <div className="max-w-[1100px] flex maxTablet:flex-col mt-0  laptop:mt-10 gap-y-4 gap-x-6 text-left pb-[30px] w-fit mx-auto">
         {items.map((el, index) => (
           <article
             key={index}

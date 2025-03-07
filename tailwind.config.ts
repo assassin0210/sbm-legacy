@@ -21,8 +21,8 @@ export const colors = {
   'sbm-error': '#e73737',
   //
   'sbm-white': '#fff',
-  'sbm-secondary': '#F87A01',
-  'sbm-orange-20': '#ec7301',
+  'sbm-secondary': 'rgb(255,102,0)',
+  'sbm-orange-20': 'rgb(236,96,0)',
   'sbm-primary': '#34B0F8',
   'sbm-primary-10': '#5EABD5',
   'sbm-neutral': '#333333',
