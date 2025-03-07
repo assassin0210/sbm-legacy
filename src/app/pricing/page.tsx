@@ -1,5 +1,4 @@
 import { QueryClient } from '@tanstack/react-query'
-import Image from 'next/image'
 
 import { PriceCard } from '@/app/pricing/component/PriceCard'
 import { CheckLong } from '@/assets/icon/checkLong'
@@ -8,9 +7,6 @@ import { queryPricing } from '@/shared/api/getPricing'
 import { page_links } from '@/shared/constants/page_links'
 import { CustomLink } from '@/shared/ui/CustomLink'
 import { P14, P16, P24, P38 } from '@/shared/ui/Typography'
-
-import routingPlatform from '../../assets/images/routingPlatform.png'
-import routingPlatformMobile from '../../assets/images/routingPlatformMobile.png'
 
 const Pricing = async () => {
   const queryClient = await new QueryClient()
@@ -114,28 +110,6 @@ const Pricing = async () => {
       <div className="bg-sbm-neutral-900 mt-20 py-16">
         <ContactInfoSection title={'Contact Sales and Support'} />
       </div>
-      <section className="relative pt-20">
-        <div
-          className="absolute left-0 top-0 w-full h-full"
-          style={{
-            background: `linear-gradient(to bottom, #50D0F3 10%,  #005D88 80%)`,
-          }}
-        ></div>
-        <Image
-          className="mx-auto  max-w-[1200px] maxMobile:hidden z-10 relative container-v2 pt-4 pb-20"
-          width={1209}
-          height={945}
-          src={routingPlatform}
-          alt="routing software"
-        />
-        <Image
-          className="mx-auto max-full max-w-[550px]  tablet:hidden z-10 relative container-v2 pt-12 pb-20"
-          width={1209}
-          height={945}
-          src={routingPlatformMobile}
-          alt="routing software mobile"
-        />
-      </section>
     </div>
   )
 }

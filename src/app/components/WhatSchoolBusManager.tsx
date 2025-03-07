@@ -4,10 +4,10 @@ export const WhatSchoolBusManager = () => {
   return (
     <section
       id="WHAT_SCHOOL_BUS_MANAGER"
-      className="pt-12 pb-16 laptop:pb-20 laptop:pt-24 bg-sbm-neutral-900"
+      className="pt-12 pb-16 laptop:pb-20 laptop:pt-24 bg-sbm-neutral-900 "
     >
-      <div className="container">
-        <div className="desktop:ml-[200px]">
+      <div className="container max-w-[1050px] mx-auto">
+        <div className="">
           <P38
             weight="font-normal"
             as="h2"
@@ -16,7 +16,7 @@ export const WhatSchoolBusManager = () => {
           >
             What's School Bus Manager?
           </P38>
-          <div className=" relative grid gap-7 laptop:grid-cols-[auto_1fr]">
+          <div className=" maxTablet:flex-col flex gap-16 mt-4 ">
             <div className="">
               <P30 className="mt-0" as="h3">
                 Watch this video.
@@ -31,20 +31,15 @@ export const WhatSchoolBusManager = () => {
                 <br />
               </P14>
             </div>
-            <div className="desktop:perspective-800 w-full max-w-[660px] laptop:pr-3 ">
-              <div className="transform desktop:-rotate-y-[10deg] shadow-neutral-500 shadow-xl mt-6">
-                <div className="w-full h-full flex">
-                  <div className="w-full flex-shrink-0 relative pb-[66.6%]  max-w-[760px]">
-                    <iframe
-                      title="video"
-                      className="absolute w-full h-full "
-                      src="https://www.youtube.com/embed/ZgxyFUTmTVM"
-                      frameBorder="0"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-              </div>
+
+            <div className="w-full tablet:w-full laptop:w-full laptop:max-w-[600px] relative">
+              <iframe
+                title="video"
+                className="w-full mobile:h-[380px]  tablet:h-[500px]   laptop:h-[340px]"
+                src="https://www.youtube.com/embed/ZgxyFUTmTVM"
+                frameBorder="0"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

@@ -42,40 +42,42 @@ export const Header = () => {
   }
 
   return (
-    <header className="px-5 extraDesktop:px-[32px] grid  grid-cols-[auto_1fr] gap-x-10 extraDesktop:gap-x-[60px]  bg-sbm-white fixed top-0 w-full left-0 z-[999] h-[80px] shadow-header">
-      <Link
-        className="relative h-full flex-shrink-0 flex w-[166px] laptop:w-[180px]"
-        href="/"
-      >
-        <Image
-          className="object-contain "
-          src={sbmLogo3.src}
-          alt="School bus manager"
-          width={233}
-          height={64}
-          priority
-        />
-      </Link>
-
-      <div className="extraDesktop:hidden flex items-center ">
-        <div className=" maxLaptop:hidden flex items-center w-full gap-4 maxMobile:hidden ml-auto">
-          <FirstLineLinks />
-        </div>
-        <div className="ml-auto">
-          <HeaderMenu className="maxMobile:hidden" />
-          <MobileNavbar
-            toggleVisibility={toggleVisibility}
-            isVisible={isVisible}
+    <header className="bg-sbm-white fixed top-0 w-full left-0 z-[999] shadow-header">
+      <div className=" mx-auto max-w-[1800px] px-5 extraDesktop:px-[32px] grid  grid-cols-[auto_1fr] gap-x-10 extraDesktop:gap-x-[60px]  h-[80px] ">
+        <Link
+          className="relative h-full flex-shrink-0 flex w-[166px] laptop:w-[180px]"
+          href="/"
+        >
+          <Image
+            className="object-contain "
+            src={sbmLogo3.src}
+            alt="School bus manager"
+            width={233}
+            height={64}
+            priority
           />
-        </div>
-      </div>
+        </Link>
 
-      <div className="maxDesktop:hidden flex flex-col justify-end extraDesktop:grid laptop:grid-cols-1 extraDesktop:grid-cols-[1fr_auto] gap-x-[60px]">
-        <div className="flex items-center gap-4 maxMobile:hidden ml-auto">
-          <FirstLineLinks />
+        <div className="extraDesktop:hidden flex items-center ">
+          <div className=" maxLaptop:hidden flex items-center w-full gap-4 maxMobile:hidden ml-auto">
+            <FirstLineLinks />
+          </div>
+          <div className="ml-auto">
+            <HeaderMenu className="maxMobile:hidden" />
+            <MobileNavbar
+              toggleVisibility={toggleVisibility}
+              isVisible={isVisible}
+            />
+          </div>
         </div>
-        <div className="gap-4 flex items-center ml-auto maxLaptop:hidden">
-          <SecondLineLinks />
+
+        <div className="maxDesktop:hidden flex flex-col justify-end extraDesktop:grid laptop:grid-cols-1 extraDesktop:grid-cols-[1fr_auto] gap-x-[60px]">
+          <div className="flex items-center gap-4 maxMobile:hidden ml-auto">
+            <FirstLineLinks />
+          </div>
+          <div className="gap-4 flex items-center ml-auto maxLaptop:hidden">
+            <SecondLineLinks />
+          </div>
         </div>
       </div>
     </header>

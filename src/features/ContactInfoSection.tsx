@@ -11,7 +11,7 @@ export const ContactInfoSection = ({
   className?: string
 }) => {
   return (
-    <section className={clsx('container', className)}>
+    <section className={clsx('container ', className)}>
       <P38
         color="text-sbm-primary"
         weight="font-semibold"

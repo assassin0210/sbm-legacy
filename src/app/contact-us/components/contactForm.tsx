@@ -9,6 +9,7 @@ import { z } from 'zod'
 import { Spinner } from '@/assets/icon/spinner'
 import { IRegistrationBody, useContactUs } from '@/shared/api/contactUs'
 import { isValidEmail } from '@/shared/helpers/validations'
+import { Button } from '@/shared/ui/Button'
 import { FormInput, FormTextarea } from '@/shared/ui/Input'
 import {
   defaultPhoneValue,
@@ -119,14 +120,17 @@ export const ContactForm = () => {
         {/*  render={({ field }) => <UploadFile {...field} />}*/}
         {/*/>*/}
 
-        <button
-          disabled={isLoading}
-          className="relative h-12 mx-auto mt-5 w-fit block px-12 py-3 shadow-buttonShadow rounded-full"
+        <Button
+          size="medium"
           type="submit"
+          className="w-fit mt-4 h-[48px] mx-auto block uppercase"
+          variant="green"
+          disabled={isLoading}
         >
           <P14
             className={clsx('uppercase', { 'opacity-0': isLoading })}
             weight="font-bold"
+            color="text-sbm-white"
           >
             submit
           </P14>
@@ -135,7 +139,7 @@ export const ContactForm = () => {
               <Spinner width={25} height={25} className="animate-spin" />
             </div>
           )}
-        </button>
+        </Button>
 
         {postContactUs.isError && (
           <ErrorMessage className="text-center">

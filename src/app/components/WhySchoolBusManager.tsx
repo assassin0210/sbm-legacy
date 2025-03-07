@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import Image from 'next/image'
 
 import why1 from '@/assets/images/why-1.png'
@@ -50,9 +51,15 @@ export const WhySchoolBusManager = () => {
         src={why1}
       />
 
-      <div className="max-w-[1000px] grid tablet:grid-cols-3 mt-10 gap-y-4 gap-x-[54px] text-left pb-[30px] w-fit mx-auto">
+      <div className="max-w-[1100px] flex maxTablet:flex-col  mt-10 gap-y-4 gap-x-6 text-left pb-[30px] w-fit mx-auto">
         {items.map((el, index) => (
-          <article key={index} className="tablet:max-w-[370px]">
+          <article
+            key={index}
+            className={clsx('', {
+              'w-[calc(100%+210px)]': index === 2,
+              'w-[calc(100%-110px)]': index !== 2,
+            })}
+          >
             <P20
               as="h3"
               weight="font-medium"
