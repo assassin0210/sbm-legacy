@@ -5,7 +5,7 @@ import { useRouter } from 'next-nprogress-bar'
 import { useState } from 'react'
 
 import { BurgerMenu } from '@/assets/icon/burderMenu'
-import { handleScrollToSection } from '@/features/Header'
+import { handleScrollToSection } from '@/features/Header/Header'
 import { page_links } from '@/shared/constants/page_links'
 import { ButtonV2 } from '@/shared/ui/Button'
 import { CustomLinkV2 } from '@/shared/ui/CustomLink'

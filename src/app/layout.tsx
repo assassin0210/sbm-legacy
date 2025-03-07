@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
 import { Footer } from '@/features/Footer'
-import { Header } from '@/features/Header'
+import { Header } from '@/features/Header/Header'
 import { PagesProgressBarProvider } from '@/features/PageProgressBarProvider'
 import { ClientProviders } from '@/features/QueryClientProvider'
 

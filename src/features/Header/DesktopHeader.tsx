@@ -1,0 +1,40 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+import sbmLogo3 from '@/assets/images/sbm_logo-3.png'
+import { FirstLineLinks, SecondLineLinks } from '@/features/Header/Header'
+import { HeaderMenu } from '@/features/HeaderMenu'
+
+export const DesktopHeader = () => {
+  return (
+    <header className="bg-sbm-white fixed top-0 w-full left-0 z-[999] shadow-header maxLaptop:hidden">
+      <div className="flex justify-between items-center mx-auto max-w-[1800px] px-5 extraDesktop:px-[32px] gap-x-10 extraDesktop:gap-x-[60px]  h-[80px] ">
+        <div className="desktopXl:w-[320px] flex-shrink-0">
+          <Link
+            className="relative h-full flex-shrink-0 flex w-[166px] laptop:w-[180px]"
+            href="/"
+          >
+            <Image
+              className="object-contain "
+              src={sbmLogo3.src}
+              alt="School bus manager"
+              width={233}
+              height={64}
+              priority
+            />
+          </Link>
+        </div>
+        <div className="gap-4 flex items-center">
+          <FirstLineLinks />
+        </div>
+        <div className="desktopXl:hidden">
+          <HeaderMenu />
+        </div>
+
+        <div className="gap-4 flex items-center maxExtraDesktop:hidden ">
+          <SecondLineLinks />
+        </div>
+      </div>
+    </header>
+  )
+}

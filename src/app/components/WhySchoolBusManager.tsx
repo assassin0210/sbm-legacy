@@ -56,8 +56,8 @@ export const WhySchoolBusManager = () => {
           <article
             key={index}
             className={clsx('', {
-              'w-[calc(100%+210px)]': index === 2,
-              'w-[calc(100%-110px)]': index !== 2,
+              'laptop:w-[calc(100%+210px)]': index === 2,
+              'laptop:w-[calc(100%-110px)]': index !== 2,
             })}
           >
             <P20

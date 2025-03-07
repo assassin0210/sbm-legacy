@@ -102,6 +102,8 @@ const config: Config = {
         maxDesktop: { max: '1539px' },
 
         extraDesktop: '1540px',
+        maxExtraDesktop: { max: '1691px' },
+        desktopXl: '1692px',
       },
     },
   },

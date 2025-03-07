@@ -12,7 +12,7 @@ import { TailoredMenu } from '@/app/components/TailoredMenu'
 import { WhatCanYouDo } from '@/app/components/WhatCanYouDo'
 import { WhatSchoolBusManager } from '@/app/components/WhatSchoolBusManager'
 import { WhySchoolBusManager } from '@/app/components/WhySchoolBusManager'
-import { handleScrollToSection } from '@/features/Header'
+import { handleScrollToSection } from '@/features/Header/Header'
 
 export default function Home() {
   return (
