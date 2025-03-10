@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next-nprogress-bar'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 
 import { useFormSchema } from '@/app/15-day-free-trial/components/useFormSchema'
@@ -46,6 +46,14 @@ interface IForm {
 }
 
 export const StartedForm = () => {
+  return (
+    <Suspense fallback={<></>}>
+      <StartedForm_ />
+    </Suspense>
+  )
+}
+
+const StartedForm_ = () => {
   const router = useRouter()
   const pricing = useQuery(queryPricing())
   const schema = useFormSchema()

@@ -27,6 +27,7 @@ export const PageLayout = ({
             height={500}
             priority
             alt="sbm-map"
+            quality={50}
             style={{ objectPosition: 'top center' }}
           />
 

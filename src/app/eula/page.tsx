@@ -1,20 +1,25 @@
 import '../../styles/styles.scss'
 
-import { QueryClient } from '@tanstack/react-query'
 import parse from 'html-react-parser'
+import { notFound } from 'next/navigation'
 
 import { PageLayout } from '@/app/components/PageLayout'
-import { queryStaticPage } from '@/shared/api/getStaticPages'
+import { instance } from '@/shared/api/instance'
+import { api_links } from '@/shared/constants/api_links'
 
 const Eula = async () => {
-  const queryClient = await new QueryClient()
-  const response = await queryClient.fetchQuery(queryStaticPage(3))
+  try {
+    const { data } = await instance.get(api_links.staticPages(3))
 
-  return (
-    <PageLayout title={response.title || ''}>
-      <div className="container-v2 terms">{parse(response.content || '')}</div>
-    </PageLayout>
-  )
+    return (
+      <PageLayout title={data.title || ''}>
+        <div className="container-v2 terms">{parse(data.content || '')}</div>
+      </PageLayout>
+    )
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (e: any) {
+    notFound()
+  }
 }
 
 export default Eula
