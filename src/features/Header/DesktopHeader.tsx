@@ -9,9 +9,9 @@ export const DesktopHeader = () => {
   return (
     <header className="bg-sbm-white fixed top-0 w-full left-0 z-[999] shadow-header maxLaptop:hidden">
       <div className="flex justify-between items-center mx-auto max-w-[1800px] px-5 extraDesktop:px-[32px] gap-x-10 extraDesktop:gap-x-[60px]  h-[80px] ">
-        <div className="desktopXl:w-[320px] flex-shrink-0">
+        <div className="desktopXl:w-[220px] flex-shrink-0">
           <Link
-            className="relative h-full flex-shrink-0 flex w-[166px] laptop:w-[180px]"
+            className="relative  flex-shrink-0 h-[42px] flex w-[166px] laptop:w-[180px]"
             href="/"
           >
             <Image
@@ -24,14 +24,14 @@ export const DesktopHeader = () => {
             />
           </Link>
         </div>
-        <div className="gap-4 flex items-center">
+        <div className="gap-4 talbet:gap-8 flex items-center">
           <FirstLineLinks />
         </div>
         <div className="desktopXl:hidden">
           <HeaderMenu />
         </div>
 
-        <div className="gap-4 flex items-center maxExtraDesktop:hidden ">
+        <div className="gap-6 flex items-center maxExtraDesktop:hidden ">
           <SecondLineLinks />
         </div>
       </div>

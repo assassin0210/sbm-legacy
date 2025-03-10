@@ -31,8 +31,8 @@ const Test = () => {
                 <li>EMAIL COMMUNICATION</li>
                 <li>DATA INTEGRATION SFTP & API</li>
                 <li>AI ROUTE BUILDING</li>
-                <li>PARENTS APP for Android / ios</li>
-                <li>DRIVER CONSOLE Android / ios</li>
+                <li>PARENTS APP for Android / iOS</li>
+                <li>DRIVER CONSOLE Android / iOS</li>
               </ul>
             </div>
           </div>

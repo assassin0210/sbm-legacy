@@ -54,10 +54,12 @@ export const FirstLineLinks = () => {
           handleScrollToSection('WHAT_SCHOOL_BUS_MANAGER', sideEffect)
         }
         variant="linkBlack"
+        className="normal-case !text-[16px]"
       >
         What’s School Bus Manager
       </ButtonV2>
       <ButtonV2
+        className="normal-case !text-[16px]"
         onClick={() =>
           handleScrollToSection('WHY_SCHOOL_BUS_MANAGER', sideEffect)
         }
@@ -66,22 +68,32 @@ export const FirstLineLinks = () => {
         Why School Bus Manager
       </ButtonV2>
       <ButtonV2
+        className="normal-case !text-[16px]"
         onClick={() => handleScrollToSection('FEATURES', sideEffect)}
         variant="linkGray"
       >
         Features
       </ButtonV2>
       <ButtonV2
+        className="normal-case !text-[16px]"
         onClick={() => handleScrollToSection('PRODUCTS', sideEffect)}
         variant="linkGray"
       >
         Products
       </ButtonV2>
-      <CustomLinkV2 variant="linkGray" href={page_links.pricing}>
+      <CustomLinkV2
+        className="normal-case !text-[16px]"
+        variant="linkGray"
+        href={page_links.pricing}
+      >
         Pricing
       </CustomLinkV2>
-      <CustomLinkV2 variant="blue" href={page_links.trial}>
-        free trial
+      <CustomLinkV2
+        // className="normal-case"
+        variant="blue"
+        href={page_links.trial}
+      >
+        Free trial
       </CustomLinkV2>
     </>
   )

@@ -168,7 +168,7 @@ export const desktopText = [
     text: (
       <>
         <span>PARENTS APP</span>
-        <span className="!text-[12px] pl-2">for Android / ios</span>
+        <span className="!text-[12px] pl-2">for Android / iOS</span>
       </>
     ),
   },
@@ -176,7 +176,7 @@ export const desktopText = [
     text: (
       <>
         <span>DRIVER CONSOLE</span>
-        <span className="!text-[12px] pl-2">for Android / ios</span>
+        <span className="!text-[12px] pl-2">for Android / iOS</span>
       </>
     ),
   },
