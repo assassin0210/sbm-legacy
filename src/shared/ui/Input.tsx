@@ -27,7 +27,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <div className="relative">
           <input
             className={clsx(
-              'h-9 w-full py-1.5 px-3 text-sm text-[#55555] bg-sbm-white ' +
+              'h-9 w-full py-1.5 px-3 text-sm text-[#55555] bg-sbm-white  text-[16px]' +
                 ' border border-[#ccc] rounded outline-none transition' +
                 ' focus:border-sbm-blue-10 focus:shadow-focusInput',
               {
