@@ -96,7 +96,7 @@ export const PriceCardCustom = () => {
 
       <P20
         as="div"
-        className="text-center mt-9 text-black leading-[36px]"
+        className="text-center mt-8 text-black leading-[34px]"
         weight="font-semibold"
       >
         <span>
@@ -105,11 +105,15 @@ export const PriceCardCustom = () => {
           <br /> 2500 riders
         </span>
 
-        <P20 className="mt-4" color="text-sbm-secondary" weight="font-semibold">
+        <P20
+          className="mt-[30px]"
+          color="text-sbm-secondary"
+          weight="font-semibold"
+        >
           Call us toll free
         </P20>
         <CustomLink
-          className="text-[20px] block font-semibold mt-1"
+          className="text-[20px] block font-semibold mt-1.5"
           variant="grayGhost"
           href={'tel:+18886676883'}
         >
@@ -118,7 +122,7 @@ export const PriceCardCustom = () => {
 
         <Link href="/contact-us">
           <ButtonV2
-            className="block !px-6 py-2 text-center w-fit mx-auto mt-6 tablet:mt-[43px]"
+            className="block !px-6 py-2 text-center w-fit mx-auto mt-6 tablet:mt-[37px]"
             variant="blue"
             // onClick={async () => {
             //   await router.push(page_links.trial + `?type=${items.type}`)
