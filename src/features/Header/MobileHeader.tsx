@@ -62,8 +62,8 @@ const MobileNavbar = ({
           )}
         >
           <div className="h-fit w-full  flex items-center flex-col gap-2 py-2">
-            <FirstLineLinks />
-            <SecondLineLinks />
+            <FirstLineLinks isMobile />
+            <SecondLineLinks isMobile />
           </div>
         </nav>
       </div>

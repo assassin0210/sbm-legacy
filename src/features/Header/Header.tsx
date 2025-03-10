@@ -1,6 +1,7 @@
 'use client'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'next-nprogress-bar'
 
@@ -37,7 +38,7 @@ export const Header = () => {
   )
 }
 
-export const FirstLineLinks = () => {
+export const FirstLineLinks = ({ isMobile }: { isMobile?: boolean }) => {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -88,18 +89,27 @@ export const FirstLineLinks = () => {
       >
         Pricing
       </CustomLinkV2>
-      <CustomLinkV2
-        // className="normal-case"
-        variant="blue"
-        href={page_links.trial}
-      >
-        Free trial
-      </CustomLinkV2>
+      {!isMobile ? (
+        <CustomLinkV2
+          // className="normal-case"
+          variant="blue"
+          href={page_links.trial}
+        >
+          Free trial
+        </CustomLinkV2>
+      ) : (
+        <Link
+          className="normal-case font-semibold text-sbm-primary !text-[16px]"
+          href={page_links.trial}
+        >
+          Free trial
+        </Link>
+      )}
     </>
   )
 }
 
-export const SecondLineLinks = () => {
+export const SecondLineLinks = ({ isMobile }: { isMobile?: boolean }) => {
   return (
     <>
       <CustomLinkV2
@@ -112,15 +122,24 @@ export const SecondLineLinks = () => {
       <CustomLinkV2 href={'tel:+18886676883'} variant="linkOrange">
         1.888.66.ROUTE
       </CustomLinkV2>
-      <CustomLinkV2
-        variant="orange"
-        target="_blank"
-        className="flex items-center gap-3 normal-case"
-        href={'https://app.schoolbusmanager.com/'}
-      >
-        <FontAwesomeIcon className="-rotate-135" icon={faKey} />
-        <span>Sign In</span>
-      </CustomLinkV2>
+      {!isMobile ? (
+        <CustomLinkV2
+          variant="orange"
+          target="_blank"
+          className="flex items-center gap-3 normal-case"
+          href={'https://app.schoolbusmanager.com/'}
+        >
+          <FontAwesomeIcon className="-rotate-135" icon={faKey} />
+          <span>Sign In</span>
+        </CustomLinkV2>
+      ) : (
+        <Link
+          className="normal-case font-semibold text-sbm-orange-20 !text-[14px]"
+          href={page_links.trial}
+        >
+          <span>Sign In</span>
+        </Link>
+      )}
     </>
   )
 }
