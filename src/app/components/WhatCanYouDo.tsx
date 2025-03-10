@@ -1,12 +1,10 @@
 import {
-  faBell,
   faClipboardUser,
-  faComments,
   faFileImport,
-  faGlobe,
-  faLocationArrow,
-  faLocationDot,
+  faFolderTree,
+  faMagnifyingGlass,
   faMapLocationDot,
+  faRepeat,
   faRoad,
   faRoute,
 } from '@fortawesome/free-solid-svg-icons'
@@ -27,7 +25,7 @@ export const WhatCanYouDo = () => {
           color="text-sbm-secondary"
           className=" text-center"
         >
-          What Can You Do With School Bus Manager?
+          What can you do with School Bus Manager?
         </P38>
         <P24
           className="text-center mt-4 maxTablet:text-[16px] maxTablet:leading-[24px] laptop:mx-36"
@@ -70,96 +68,53 @@ export const WhatCanYouDo = () => {
 
 const items = [
   {
-    image: faRoute,
-    title: 'Automated Route Building',
-    subtitle:
-      'Build and organize routes efficiently. Easily keep track of children, buses and drivers.',
-  },
-  {
     image: faMapLocationDot,
-    title: 'Route Optimization',
+    title: 'Build routes',
     subtitle:
-      'Quickly look up children’s information contact info, profile… etc.',
+      'Build and organize Optimized routes efficiently. Easily keep track of children, buses and drivers.',
   },
+
   {
     image: faRoad,
-    title: 'Tool Sets for load balancing',
+    title: 'Tools for load balancing',
     subtitle:
-      'Automatically incorporate turn-by-turn directions into every route and trip.',
+      'Easily compare and analyze your routes to identify intersections and overlaps, allowing you to adjust stops and reassign riders for better route balance and efficiency.',
   },
-  {
-    image: faGlobe,
-    title: 'Worldwide Maps at no charge',
-    subtitle: 'Simply log children’s attendance all on one screen.',
-  },
-  {
-    image: faLocationDot,
-    title: 'Live vehicle tracking',
-    subtitle: 'Clearly organize your routes by years and sessions.',
-  },
+
   {
     image: faClipboardUser,
-    title: 'Live attendance taking',
-    subtitle:
-      'Instantly import department of education files and easily manage daily updates.',
-  },
-  {
-    image: faRoute,
-    title: 'Riders / Parents Communications',
-    subtitle:
-      'Multi channel Riders/parents communications (Email, Texting, ...)',
-  },
-  {
-    image: faComments,
-    title: 'Riders / Parents Request Handling',
-    subtitle:
-      'GPS’s plug and play GPS is installed in 3 easy steps. It’s durable, secure and entirely self-maintained. Avoid any hard wiring or installation costs by simply locating.',
-  },
-  {
-    image: faBell,
-    title: 'ETA notification',
-    subtitle: 'Clearly organize your routes by years and sessions.',
-  },
-  {
-    image: faFileImport,
-    title: 'Manage Field Trips',
-    subtitle:
-      'Instantly import department of education files and easily manage daily updates.',
-  },
-  {
-    image: faLocationArrow,
-    title: 'Annual Rollover',
-    subtitle:
-      'GPS’s 3G, GPS technologies allow you to watch your vehicles in real-time and communicate new routes or stops directly to their on-board GARMIN navigation.',
-  },
-  {
-    image: faRoute,
-    title: 'Integration with data sources',
-    subtitle:
-      'GPS’s plug and play GPS is installed in 3 easy steps. It’s durable, secure and entirely self-maintained. Avoid any hard wiring or installation costs by simply locating.',
-  },
-  {
-    image: faRoute,
-    title: 'Search Riders',
-    subtitle: 'Clearly organize your routes by years and sessions.',
+    title: 'Take attendance',
+    subtitle: 'Simply log attendance and monitor who’s onboard!',
   },
 
   {
     image: faRoute,
-    title: 'Organize School Sessions',
+    title: 'Turn-by-turn directions',
+    subtitle:
+      'Automatically incorporate turn-by-turn directions into every route and trip.',
+  },
+
+  {
+    image: faFileImport,
+    title: 'Simple data import',
+    subtitle:
+      'Instantly import CSV or XLSX files and easily manage daily updates.',
+  },
+  {
+    image: faMagnifyingGlass,
+    title: 'Search riders',
+    subtitle: 'Quickly look up rider information contact info, profile… etc.',
+  },
+  {
+    image: faFolderTree,
+    title: 'Organize school sessions',
     subtitle:
       'Instantly import department of education files and easily manage daily updates.',
   },
+
   {
-    image: faRoute,
-    title: 'Turn-by-Turn Directions',
-    subtitle:
-      'GPS’s 3G, GPS technologies allow you to watch your vehicles in real-time and communicate new routes or stops directly to their on-board GARMIN navigation.',
-  },
-  {
-    image: faRoute,
-    title: 'Simple Data Import',
-    subtitle:
-      'GPS’s plug and play GPS is installed in 3 easy steps. It’s durable, secure and entirely self-maintained. Avoid any hard wiring or installation costs by simply locating.',
+    image: faRepeat,
+    title: 'Annual rollover',
+    subtitle: 'Easily roll over routes from year to year.',
   },
 ]

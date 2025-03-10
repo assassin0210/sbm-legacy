@@ -239,6 +239,7 @@ export const P24 = (props: IProps) => {
 
 export const P20 = (props: IProps) => {
   const {
+    as,
     className = '',
     children,
     weight = 'font-black' as IWeight,
@@ -246,13 +247,15 @@ export const P20 = (props: IProps) => {
 
     ...rest
   } = props
+  const Tag = as ? as : 'p'
+
   return (
-    <p
+    <Tag
       className={clsx('text-xl leading-7', weight, color, className)}
       {...rest}
     >
       {children}
-    </p>
+    </Tag>
   )
 }
 

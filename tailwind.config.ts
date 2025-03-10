@@ -19,7 +19,7 @@ export const colors = {
   'sbm-blue-30': '#3b6498',
   'sbm-blue-40': '#23527c',
   'sbm-error': '#e73737',
-  //
+  //333336
   'sbm-white': '#fff',
   'sbm-secondary': 'rgb(255,102,0)',
   'sbm-orange-20': 'rgb(236,96,0)',
@@ -27,6 +27,7 @@ export const colors = {
   'sbm-primary-10': '#5EABD5',
   'sbm-neutral': '#333333',
   'sbm-neutral-100': '#999999',
+  'sbm-neutral-400': '#868686',
   'sbm-neutral-200': '#EBEBEB',
   'sbm-neutral-300': '#5F6D7D',
   'sbm-neutral-800': '#f6f8f9',

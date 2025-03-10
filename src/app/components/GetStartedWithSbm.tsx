@@ -4,7 +4,7 @@ import { page_links } from '@/shared/constants/page_links'
 import { CustomLinkV2 } from '@/shared/ui/CustomLink'
 import { P42 } from '@/shared/ui/Typography'
 
-import iStok from '../../assets/images/getStartedWithSBM.png'
+import iStok from '../../assets/images/getStartedWithSBM.jpg'
 
 export const GetStartedWithSbm = () => {
   return (
@@ -26,7 +26,7 @@ export const GetStartedWithSbm = () => {
           as="h2"
           weight="font-normal"
         >
-          To Get Started with School Bus Manager
+          To get started with School Bus Manager
         </P42>
         <div className="flex justify-center flex-wrap gap-4 mt-[60px]">
           <CustomLinkV2
@@ -37,7 +37,7 @@ export const GetStartedWithSbm = () => {
             free 15 day trial
           </CustomLinkV2>
           <CustomLinkV2
-            href="tel:+18886676883"
+            href="/contact-us"
             className="uppercase py-3 h-fit px-8"
             variant="black"
           >

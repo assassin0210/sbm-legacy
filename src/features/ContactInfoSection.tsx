@@ -22,7 +22,7 @@ export const ContactInfoSection = ({
       <div className="grid tablet:grid-cols-[auto_auto_auto] mx-auto tablet:mx-auto w-fit tablet:gap-10 gap-8 laptop:gap-16 desktop:gap-48 mt-12">
         <article>
           <P20 color="text-sbm-secondary" weight="font-semibold">
-            Call Us Toll Free
+            Call us toll free
           </P20>
           <CustomLink
             className="text-[16px] block font-semibold mt-3"
@@ -48,7 +48,7 @@ export const ContactInfoSection = ({
         </article>
         <article>
           <P20 color="text-sbm-secondary" weight="font-semibold">
-            Mailing Address
+            Mailing address
           </P20>
           <P16
             className="mt-3"
@@ -62,7 +62,7 @@ export const ContactInfoSection = ({
         </article>
         <article>
           <P20 color="text-sbm-secondary" weight="font-semibold">
-            Business Hours
+            Business hours
           </P20>
           <P16
             className="mt-3"

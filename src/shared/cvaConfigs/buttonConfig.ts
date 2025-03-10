@@ -34,7 +34,7 @@ export const buttonVariants = cva(
 
 export const variantsV2 = {
   linkBlack: 'text-sbm-black hover:text-sbm-orange-20 ',
-  linkGray: 'text-sbm-neutral-100 hover:text-sbm-secondary ',
+  linkGray: 'text-sbm-neutral-400 hover:text-sbm-secondary ',
   linkOrange: 'text-sbm-orange-20 hover:text-sbm-black ',
   black:
     'px-3 py-1.5 text-sbm-white hover:text-sbm-secondary  bg-sbm-neutral rounded-full text-sbm-white hover:bg-white hover:text-sbm-blue-10',

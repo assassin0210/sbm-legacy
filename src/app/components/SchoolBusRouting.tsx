@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { page_links } from '@/shared/constants/page_links'
 import { CustomLinkV2 } from '@/shared/ui/CustomLink'
-import { P16, P24, P52 } from '@/shared/ui/Typography'
+import { P16, P52 } from '@/shared/ui/Typography'
 
 import { colors } from '../../../tailwind.config'
 import sbmMap from '../../assets/images/sbm-map.png'
@@ -16,7 +16,7 @@ export const SchoolBusRouting = () => {
           src={sbmMap.src}
           width={2000}
           height={800}
-          alt="sbm-map"
+          alt="School Bus Manager rider tracking"
           style={{ objectPosition: 'center top' }}
         />
 
@@ -28,48 +28,30 @@ export const SchoolBusRouting = () => {
         ></div>
       </div>
       <div className="container relative z-10 pt-20">
-        <h1 className="max-w-[1170px] w-fit mx-auto mt-12 laptop:mt-24 ">
+        <h1 className="max-w-[1170px] w-fit mx-auto mt-12 tablet:mt-16  desktop:mt-24 ">
           <P52
             color="text-sbm-white"
-            className="block leading-[60px] maxLaptop:text-[32px] maxLaptop:leading-[44px]"
+            className="text-center block leading-[60px]  maxLaptop:!text-[32px] maxLaptop:leading-[44px]"
             as="span"
             weight="font-light"
           >
-            School Bus Routing, Tracking
-          </P52>
-          <P24
-            color="text-sbm-white"
-            className="tablet:pl-[20px]"
-            as="span"
-            weight="font-light"
-          >
-            and
-          </P24>{' '}
-          <P52
-            color="text-sbm-white"
-            className="leading-[60px] maxLaptop:text-[32px] maxLaptop:leading-[44px]"
-            as="span"
-            weight="font-light"
-          >
-            Communication
-          </P52>{' '}
-          <P52
-            className=" whitespace-nowrap [filter:drop-shadow(0px_0px_10px_rgba(255,255,255,1))]"
-            color="text-sbm-primary"
-            as="span"
-            weight="font-light"
-          >
-            Made Easy!
+            School bus routing, tracking and&nbsp;communication made&nbsp;
+            <span className="relative">
+              <span>&nbsp;easy</span>
+              <span className="text-[20px] absolute top-[-8px] -right-6">
+                &trade;
+              </span>
+            </span>{' '}
           </P52>
         </h1>
         <P16
           color="text-sbm-white"
-          className="text-center max-w-[1170px] mx-auto !font-light block mt-8 laptop:mt-12"
+          className="text-center max-w-[1170px] mx-auto !font-light block mt-8 laptop:mt-8"
         >
           Discover a comprehensive, dynamic solution for building and tracking
-          routes designed for any business needing optimized routes in minutes!
-          Our software offers fully automated tracking, attendance management,
-          and much more.
+          routes designed for any business needing optimized
+          routes&nbsp;in&nbsp;minutes! Our&nbsp;software offers fully automated
+          tracking, attendance management, and much more.
         </P16>
 
         <div className="flex justify-center flex-wrap gap-4 mt-8">

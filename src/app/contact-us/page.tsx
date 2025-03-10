@@ -27,7 +27,7 @@ const ContactUs = () => {
         </div>
         <ContactForm />
       </section>
-      <ContactInfoSection className="pb-16 pt-12" title="Contact Info" />
+      <ContactInfoSection className="pb-16 pt-12" title="Contact info" />
       <section className="min-h-[380px] relative">
         <div className="absolute inset-0">
           <Image

@@ -511,8 +511,19 @@ a.anchor {
 }
 
 .terms {
+  ul{
+    list-style: initial!important;
+    list-style-type: circle!important;
+    padding-left: 20px;
+  }
+  h3{
+    font-size: 18px;
+    margin-bottom: -8px;
+  }
   li {
-    font-size: 18px !important;
+    font-size: 14px !important;
+    list-style: initial!important;
+    list-style-type: circle!important;
   }
   .h2 {
     display: block;
@@ -521,13 +532,13 @@ a.anchor {
     padding-bottom: 25px;
     margin-bottom: 25px;
     border-bottom: 1px solid #dddddd;
-    font-size: 30px;
+    font-size: 20px;
   }
   p {
     margin-bottom: 16px;
     margin-top: 16px;
     display: block !important;
-    font-size: 18px !important;
+    font-size: 14px !important;
     font-weight: normal;
     color: #414142;
 

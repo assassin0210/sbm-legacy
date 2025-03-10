@@ -16,17 +16,22 @@ export const DataPartners = () => {
         color="text-sbm-primary"
         className=" text-center"
       >
-        Data Exchange Partners
+        Data exchange partners
       </P38>
-      <div className="max-w-[1170px] mx-auto flex tablet:items-end maxMobile:items-center justify-around maxMobile:flex-col gap-8 mt-8 laptop:mt-10">
-        <Link href={page_links.childplus}>
-          <Image className="w-[130px]" src={cpLogo} alt={''} />
-        </Link>
-        <Link href={page_links.root}>
-          <Image className="w-[110px] tablet:ml-12" src={campsite} alt={''} />
-        </Link>
-        <Link href={page_links.root}>
-          <Image className="w-[180px]" src={campminder} alt={''} />
+      <div className="max-w-[1170px] mx-auto items-center flex tablet:items-end maxMobile:items-center justify-around maxMobile:flex-col gap-8 mt-8 laptop:mt-10">
+        <Image className="w-[110px] h-fit" src={campsite} alt={'campsite'} />
+        <Image
+          className="w-[180px] mb-2 h-fit flex items-center justify-center"
+          src={campminder}
+          alt={'campminder'}
+        />
+
+        <Link aria-label="React more about partner" href={page_links.childplus}>
+          <Image
+            className="w-[130px] h-fit"
+            src={cpLogo}
+            alt={'child plus software'}
+          />
         </Link>
       </div>
     </section>

@@ -18,7 +18,7 @@ export const TailoredMenu = () => {
           color="text-sbm-white"
           className=" text-center"
         >
-          A Tailored Menu for Transportation Operations
+          A tailored menu for transportation operations
         </P38>
         <P30
           className="text-center mt-1"
@@ -26,7 +26,7 @@ export const TailoredMenu = () => {
           as="h3"
           color="text-sbm-neutral"
         >
-          Choose and pay only for what you need.
+          Choose and pay only for what you need
         </P30>
         <DesktopImage />
         <MobileTailored />

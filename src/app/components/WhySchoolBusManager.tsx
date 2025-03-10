@@ -1,4 +1,3 @@
-import { clsx } from 'clsx'
 import Image from 'next/image'
 
 import why1 from '@/assets/images/why-1.png'
@@ -7,19 +6,19 @@ import { P16, P20, P30, P38 } from '@/shared/ui/Typography'
 export const WhySchoolBusManager = () => {
   const items = [
     {
-      title: "It's Simple",
+      title: "It's simple",
       subtitle:
         'School Bus Manager is a SIMPLE and intuitive bus routing solution that is designed for all skill levels so you’ll be up and running quickly. It’s web-based so it requires no installation. It’s fully compatible with both PC and Mac. It backs itself up daily. It’s always on the latest version, and you won’t need any IT guys to run it.',
     },
     {
-      title: "It's Affordable",
+      title: "It's affordable",
       subtitle:
         'School Bus Manager eliminates the need for routing buses by hand, streamlining your transportation operation. It pays for itself saving you money, time and errors, while increasing your profitability and efficiency. Requiring no big upfront investment our pricing is designed to suit any size district or operation.',
     },
     {
-      title: "It's Powerful",
+      title: "It's powerful",
       subtitle:
-        'School Bus Manager delivers unparalleled power and efficiency for managing transportation operations. Designed to simplify even the most complex routing tasks. The platform transforms traditional operations into streamlined, highly reliable processes. With a strong focus on accuracy, scalability, and intuitive design, School Bus Manager empowers you to optimize transportation strategies while building trust and transparency with riders and their families.',
+        'With just a quick import of your student data and configuring a few simple parameters, users are able to build trips and routes in minutes with turn-by-turn directions, accurate stop times, and more. Routes can be optimized or modified in seconds with just a click of a button or moving kids around the map.™',
     },
   ]
 
@@ -47,19 +46,13 @@ export const WhySchoolBusManager = () => {
 
       <Image
         className="mx-auto max-w-[520px] w-full py-10 mt-4"
-        alt=""
+        alt="Presentation pages"
         src={why1}
       />
 
-      <div className="max-w-[1100px] flex maxTablet:flex-col mt-0  laptop:mt-10 gap-y-4 gap-x-6 text-left pb-[30px] w-fit mx-auto">
+      <div className="max-w-[1000px] grid tablet:grid-cols-3 mt-10 gap-y-4 gap-x-[46px] text-left pb-[30px] w-fit mx-auto">
         {items.map((el, index) => (
-          <article
-            key={index}
-            className={clsx('', {
-              'laptop:w-[calc(100%+210px)]': index === 2,
-              'laptop:w-[calc(100%-110px)]': index !== 2,
-            })}
-          >
+          <article key={index} className="tablet:max-w-[370px]">
             <P20
               as="h3"
               weight="font-medium"

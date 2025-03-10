@@ -49,7 +49,7 @@ const MobileNavbar = ({
 }) => {
   return (
     <article className="h-fit">
-      <button onClick={toggleVisibility}>
+      <button aria-label="burger-menu" onClick={toggleVisibility}>
         <BurgerMenu className="w-10" />
       </button>
       <div className="absolute top-[60px] left-0 w-full bg-sbm-white px-4 desktop:hidden">

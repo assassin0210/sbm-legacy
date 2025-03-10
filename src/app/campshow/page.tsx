@@ -55,11 +55,13 @@ const Campshow = () => {
       ...rest,
       phone: _phone,
       id: rest?.email || '',
+      note: '',
       createdAt: new Date(),
     })
       .then(() => {
         setSuccessMessage(true)
         setLoading(false)
+        methods.reset(defaultValues)
       })
       .catch(() => {
         setErrorMessage(true)
@@ -71,7 +73,7 @@ const Campshow = () => {
   }
 
   return (
-    <main className="pt-20 mt-12  container-v2">
+    <main className="mt-20 tablet:pt-20 tablet:mt-12  container-v2">
       <P30 className="text-center" weight="font-semibold">
         Schoolbusmanager
       </P30>

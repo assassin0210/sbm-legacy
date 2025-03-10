@@ -17,7 +17,9 @@ export const HeaderMenu = ({ className }: { className?: string }) => {
     <div className={clsx(className)}>
       <Popover.Root open={open} onOpenChange={(v) => setOpen(v)}>
         <Popover.Trigger className="cursor-pointer" asChild>
-          <BurgerMenu className="w-10" />
+          <button aria-label="burger-menu">
+            <BurgerMenu className="w-10" />
+          </button>
         </Popover.Trigger>
         <Popover.Content
           className="bg-neutral-00 flex flex-col bg-sbm-neutral-900 gap-2 w-fit overflow-auto shadow-lg border border-neutral-05 rounded-lg p-1 z-[2]"

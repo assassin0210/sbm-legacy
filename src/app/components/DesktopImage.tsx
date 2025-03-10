@@ -3,13 +3,22 @@ import Image from 'next/image'
 
 import { CheckLong } from '@/assets/icon/checkLong'
 import bullets from '@/assets/images/bullets.png'
+import waypoint from '@/assets/images/waypoint.png'
 import { P12, P14, P16, P28 } from '@/shared/ui/Typography'
 
 export const DesktopImage = () => {
   return (
     <div className="max-w-[940px] relative mx-auto mt-12 w-full maxTablet:hidden">
-      <Image className=" w-full -ml-4 " src={bullets} alt={'Bullets'} />
-
+      <Image
+        className=" w-full -ml-4 "
+        src={bullets}
+        alt="Software on some devices"
+      />
+      <Image
+        className="absolute right-[18px] bottom-1 p-2 bg-white rounded-sm w-[340px]"
+        alt="waipoint"
+        src={waypoint}
+      />
       <div className="absolute top-[26px] laptop:top-[38px] right-[50px] ">
         <div>
           <P28

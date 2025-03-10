@@ -43,7 +43,7 @@ const DaysFreeTrial = () => {
               color="text-sbm-secondary"
               className=" text-center"
             >
-              Try School Bus Manager Free for 15 Days!
+              Try School Bus Manager free for 15 days!
             </P38>
 
             <P24
@@ -55,7 +55,7 @@ const DaysFreeTrial = () => {
               as="h2"
             >
               <span className="z-10 laptop:relative bg-sbm-neutral-900 px-8">
-                Getting Started is Easy as…
+                Getting started is easy as…
               </span>
             </P24>
 
@@ -167,7 +167,7 @@ const DaysFreeTrial = () => {
           <div className="container-v2 pb-16">
             <P38 className=" maxTablet:before:hidden relative text-center font-semibold text-sbm-secondary before:content-[''] before:absolute before:h-[4px] before:bg-sbm-secondary before:-left-6 before:w-[calc(50%-50px)] before:top-1/2 before:-translate-y-1/2">
               <span className="z-10 laptop:relative bg-sbm-neutral-900 tablet:px-8">
-                Get Started for Free
+                Get started for free
               </span>
             </P38>
             <StartedForm />
@@ -176,7 +176,7 @@ const DaysFreeTrial = () => {
 
         <ContactInfoSection
           className="pb-12 pt-8"
-          title="Contact Sales and Support"
+          title="Contact sales and support"
         />
       </div>
     </Suspense>
@@ -190,12 +190,12 @@ const steps2 = [
       "Fill out the form. We'll call you to configure a few simple settings and enable your account",
   },
   {
-    title: 'Import Your Rider Data',
+    title: 'Import your rider data',
     subtitle:
       'Output an XLS or CSV file from your Student Information System and import directly into School Bus Manager. We will even import your first data file for you for free!',
   },
   {
-    title: 'Start Building Routes',
+    title: 'Start building routes',
     subtitle:
       'We can teach you how to build routes in 30 minutes or less, output turn-by-turn directions, take attendance, and more!',
   },

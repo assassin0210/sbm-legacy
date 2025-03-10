@@ -37,11 +37,11 @@ export const PageLayout = ({
             }}
           ></div>
         </div>
-        <div className="container-v2 relative my-auto">
+        <div className="container-v2 relative mt-32">
           <P38
             weight="font-medium"
             as="h1"
-            className="text-[36px] mt-3 mb-2 bg-sbm-neutral text-sbm-white w-fit px-2  rounded"
+            className="text-[36px] mt-3 mb-2 text-sbm-white w-fit px-2  rounded"
           >
             {title}
           </P38>

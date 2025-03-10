@@ -9,6 +9,7 @@ import { CheckLong } from '@/assets/icon/checkLong'
 import desktop from '@/assets/images/Desktop.png'
 import mobile from '@/assets/images/mobile.png'
 import tablet from '@/assets/images/tablet.png'
+import waypoint from '@/assets/images/waypoint.png'
 import { P14, P16, P24, P34 } from '@/shared/ui/Typography'
 
 export const MobileTailored = () => {
@@ -131,6 +132,11 @@ export const MobileTailored = () => {
           </ul>
         </div>
       </div>
+      <Image
+        className=" p-2 bg-white rounded-sm w-[340px] mx-auto"
+        alt="waipoint"
+        src={waypoint}
+      />
     </div>
   )
 }
