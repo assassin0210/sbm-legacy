@@ -1,14 +1,10 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Facebook } from '@/assets/icon/facebook'
 import { Youtube } from '@/assets/icon/youtube'
-import sbmMap from '@/assets/images/sbm-map.png'
 import { page_links } from '@/shared/constants/page_links'
 import { P12, P14 } from '@/shared/ui/Typography'
-
-import { colors } from '../../tailwind.config'
 
 export const Footer = () => {
   const nav = [
