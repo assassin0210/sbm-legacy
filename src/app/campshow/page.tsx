@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { initializeApp } from 'firebase/app'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { doc, getFirestore, setDoc } from 'firebase/firestore'
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -51,7 +51,7 @@ const Campshow = () => {
     const _phone = `${countryByCode[data.phone.phoneCode]?.dial_code} ${data?.phone.phoneNumber}`
     setLoading(true)
 
-    await addDoc(collection(db, 'customers'), {
+    await setDoc(doc(db, 'customers', rest?.email), {
       ...rest,
       phone: _phone,
       id: rest?.email || '',
@@ -59,9 +59,11 @@ const Campshow = () => {
     })
       .then(() => {
         setSuccessMessage(true)
+        setLoading(false)
       })
       .catch(() => {
         setErrorMessage(true)
+        setLoading(false)
       })
       .finally(() => {
         setLoading(false)
