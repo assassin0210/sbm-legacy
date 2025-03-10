@@ -6,6 +6,7 @@ import {
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 
+import { MainLayout } from '@/app/components/MainLayout'
 import { queryPricing } from '@/shared/api/getPricing'
 
 export const metadata: Metadata = {
@@ -21,5 +22,9 @@ export default async function Layout({ children }: IProps) {
   await queryClient.prefetchQuery(queryPricing())
   const state = dehydrate(queryClient)
 
-  return <HydrationBoundary state={state}>{children}</HydrationBoundary>
+  return (
+    <MainLayout>
+      <HydrationBoundary state={state}>{children}</HydrationBoundary>
+    </MainLayout>
+  )
 }

@@ -4,3 +4,6 @@ export const accept = {
   'image/jpeg': ['.jpeg', '.jpg'],
   'image/png': ['.png'],
 }
+
+export const firebaseApiKey = 'AIzaSyAjNIaouZUVMXUYhvdg5vlhG6PjD7cPU38'
+export const firebaseProjectId = 'campshow-6a9e7'

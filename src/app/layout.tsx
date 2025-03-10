@@ -44,9 +44,7 @@ export default function RootLayout({
       >
         <ClientProviders>
           <PagesProgressBarProvider />
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          {children}
         </ClientProviders>
       </body>
     </html>

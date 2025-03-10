@@ -7,6 +7,7 @@ import { Suspense, useEffect } from 'react'
 
 import { DataPartners } from '@/app/components/DataPartners'
 import { GetStartedWithSbm } from '@/app/components/GetStartedWithSbm'
+import { MainLayout } from '@/app/components/MainLayout'
 import { SchoolBusRouting } from '@/app/components/SchoolBusRouting'
 import { TailoredMenu } from '@/app/components/TailoredMenu'
 import { WhatCanYouDo } from '@/app/components/WhatCanYouDo'
@@ -35,14 +36,16 @@ const Component = () => {
   }, [router, scrollId])
 
   return (
-    <div className="site-index">
-      <SchoolBusRouting />
-      <WhatSchoolBusManager />
-      <WhySchoolBusManager />
-      <WhatCanYouDo />
-      <TailoredMenu />
-      <DataPartners />
-      <GetStartedWithSbm />
-    </div>
+    <MainLayout>
+      <div className="site-index">
+        <SchoolBusRouting />
+        <WhatSchoolBusManager />
+        <WhySchoolBusManager />
+        <WhatCanYouDo />
+        <TailoredMenu />
+        <DataPartners />
+        <GetStartedWithSbm />
+      </div>
+    </MainLayout>
   )
 }
