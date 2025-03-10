@@ -50,9 +50,11 @@ const Campshow = () => {
 
     const _phone = `${countryByCode[data.phone.phoneCode]?.dial_code} ${data?.phone.phoneNumber}`
     setLoading(true)
+
     await addDoc(collection(db, 'customers'), {
       ...rest,
       phone: _phone,
+      id: rest?.email || '',
       createdAt: new Date(),
     })
       .then(() => {
@@ -83,23 +85,23 @@ const Campshow = () => {
           />
           <FormInput
             className="col-span-2"
-            placeholder="Steet Address (no P.O.Boxes)"
+            placeholder="Street Address (no P.O.Boxes)"
             name="address"
           />
           <FormInput
             className="col-span-2"
             name="city"
-            placeholder="City of Town"
+            placeholder="City or Town"
           />
           <FormInput
             className="col-span-1"
             name="state"
-            placeholder="State of Province"
+            placeholder="State or Province"
           />
           <FormInput
             className="col-span-1"
             name="zip"
-            placeholder="Zip or Pastal Code"
+            placeholder="Zip or Postal Code"
           />
           <FormInput
             className="col-span-2"
@@ -115,7 +117,7 @@ const Campshow = () => {
           <FormInput
             className="tablet:col-span-2"
             name="email"
-            placeholder="Yout email"
+            placeholder="Your email"
           />
           <div className="col-span-2 tablet:col-span-4 flex justify-center">
             <Button

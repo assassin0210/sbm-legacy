@@ -149,29 +149,29 @@ export const StartedForm = () => {
             name="companyName"
           />
           <FormInput
-            placeholder="Yout email"
+            placeholder="Your email"
             className="col-span-2"
             name="email"
           />
           {/*//*/}
           <FormInput
-            placeholder="Steet Address (no P.O.Boxes)"
+            placeholder="Street Address (no P.O.Boxes)"
             className="col-span-2 tablet:col-span-6"
             name="streetAddress"
           />
           {/*//*/}
           <FormInput
-            placeholder="City of Town"
+            placeholder="City or Town"
             className="col-span-1 tablet:col-span-3"
             name="city"
           />
           <FormInput
-            placeholder="State of Province"
+            placeholder="State or Province"
             className="col-span-1"
             name="state"
           />
           <FormInput
-            placeholder="Zip or Pastal Code"
+            placeholder="Zip or Postal Code"
             className="col-span-1 tablet:col-span-2"
             name="zipCode"
           />

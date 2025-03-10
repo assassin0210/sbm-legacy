@@ -1,7 +1,7 @@
 import './globals.css'
 
 import { clsx } from 'clsx'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
 
 import { PagesProgressBarProvider } from '@/features/PageProgressBarProvider'
@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: 'School Bus Routing and Planning Software | School Bus Manager',
   description:
     'School Bus Routing Made Easy. Start your 15-Day Free Trial Today. NO CREDIT CARD REQUIRED.',
+}
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 const montserrat = Montserrat({
