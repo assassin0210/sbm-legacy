@@ -1,12 +1,9 @@
 import Image from 'next/image'
 
 import { PageLayout } from '@/app/components/PageLayout'
-import cpLogo from '@/assets/images/cp_logo.svg'
+import { Images } from '@/assets/images/images'
 import { SalesAndSupport } from '@/shared/components/SalesAndSupport'
 import { P16, P24, P38 } from '@/shared/ui/Typography'
-
-import exportImg from '../../assets/images/cp_export.png'
-import saveImg from '../../assets/images/cp_save_as.png'
 
 const Childplus = () => {
   return (
@@ -15,7 +12,7 @@ const Childplus = () => {
         <article className=" maxMobile:flex-col flex gap-[30px]  mt-[60px] mb-10  items-center">
           <Image
             className="w-[165px] h-16"
-            src={cpLogo}
+            src={Images.cpLogo}
             alt="Child plus partner"
           />
 
@@ -95,7 +92,7 @@ const items = [
     image: (
       <Image
         className="max-w-[120px] w-full object-contain maxMobile:mx-auto"
-        src={exportImg}
+        src={Images.exportImg}
         alt="step presentation"
       />
     ),
@@ -108,7 +105,7 @@ const items = [
     image: (
       <Image
         className="max-w-[700px] w-full object-contain maxMobile:mx-auto"
-        src={saveImg}
+        src={Images.saveImg}
         alt="step presentation"
       />
     ),

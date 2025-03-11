@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import sbmLogo3 from '@/assets/images/sbm_logo-3.png'
+import { Images } from '@/assets/images/images'
 import { FirstLineLinks, SecondLineLinks } from '@/features/Header/Header'
 import { HeaderMenu } from '@/features/HeaderMenu'
 
@@ -16,7 +16,7 @@ export const DesktopHeader = () => {
           >
             <Image
               className="object-contain "
-              src={sbmLogo3.src}
+              src={Images.sbmLogo3.src}
               alt="School bus manager"
               width={233}
               height={64}

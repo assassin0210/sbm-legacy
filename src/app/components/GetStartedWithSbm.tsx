@@ -1,10 +1,9 @@
 import Image from 'next/image'
 
+import { Images } from '@/assets/images/images'
 import { page_links } from '@/shared/constants/page_links'
 import { CustomLinkV2 } from '@/shared/ui/CustomLink'
 import { P42 } from '@/shared/ui/Typography'
-
-import iStok from '../../assets/images/getStartedWithSBM.jpg'
 
 export const GetStartedWithSbm = () => {
   return (
@@ -12,7 +11,7 @@ export const GetStartedWithSbm = () => {
       <div className="absolute left-0 top-0 w-full h-[500px] laptop:h-[800px]  overflow-hidden">
         <Image
           className="object-cover object-center w-full h-full"
-          src={iStok.src}
+          src={Images.iStok.src}
           width={2000}
           height={800}
           alt="sbm-map"

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import why1 from '@/assets/images/why-1.png'
+import { Images } from '@/assets/images/images'
 import { P16, P20, P30, P38 } from '@/shared/ui/Typography'
 
 export const WhySchoolBusManager = () => {
@@ -47,7 +47,7 @@ export const WhySchoolBusManager = () => {
       <Image
         className="mx-auto max-w-[520px] w-full py-10 mt-4"
         alt="Presentation pages"
-        src={why1}
+        src={Images.why1}
       />
 
       <div className="max-w-[1000px] grid tablet:grid-cols-3 mt-10 gap-y-4 gap-x-[46px] text-left pb-[30px] w-fit mx-auto">

@@ -2,7 +2,7 @@ import { clsx } from 'clsx'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 
-import sbmMap from '@/assets/images/sbm-map.png'
+import { Images } from '@/assets/images/images'
 import { P38 } from '@/shared/ui/Typography'
 
 import { colors } from '../../../tailwind.config'
@@ -22,7 +22,7 @@ export const PageLayout = ({
         <div className="absolute left-0 top-0 w-full h-[440px] overflow-hidden">
           <Image
             className="object-cover object-center w-full h-full"
-            src={sbmMap.src}
+            src={Images.sbmMap.src}
             width={1300}
             height={500}
             priority

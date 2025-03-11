@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { BurgerMenu } from '@/assets/icon/burderMenu'
-import sbmLogo3 from '@/assets/images/sbm_logo-3.png'
+import { Images } from '@/assets/images/images'
 import { FirstLineLinks, SecondLineLinks } from '@/features/Header/Header'
 
 export const MobileHeader = () => {
@@ -23,7 +23,7 @@ export const MobileHeader = () => {
         >
           <Image
             className="object-contain "
-            src={sbmLogo3.src}
+            src={Images.sbmLogo3.src}
             alt="School bus manager"
             width={233}
             height={64}

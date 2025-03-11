@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { Facebook } from '@/assets/icon/facebook'
 import { Youtube } from '@/assets/icon/youtube'
-import sbmLogo3 from '@/assets/images/sbm_logo-3.png'
+import { Images } from '@/assets/images/images'
 import { page_links } from '@/shared/constants/page_links'
 import { P12, P14 } from '@/shared/ui/Typography'
 
@@ -37,7 +37,7 @@ export const Footer = () => {
         >
           <Image
             className="object-contain "
-            src={sbmLogo3.src}
+            src={Images.sbmLogo3.src}
             alt="School bus manager"
             width={233}
             height={64}

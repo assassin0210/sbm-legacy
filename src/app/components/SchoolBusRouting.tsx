@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
+import { Images } from '@/assets/images/images'
 import { page_links } from '@/shared/constants/page_links'
 import { CustomLinkV2 } from '@/shared/ui/CustomLink'
 import { P16, P52 } from '@/shared/ui/Typography'
 
 import { colors } from '../../../tailwind.config'
-import sbmMap from '../../assets/images/sbm-map.png'
 
 export const SchoolBusRouting = () => {
   return (
@@ -13,7 +13,7 @@ export const SchoolBusRouting = () => {
       <div className="absolute left-0 top-0 w-full h-[800px]  laptop:h-[850px] overflow-hidden">
         <Image
           className="object-cover object-top  w-full h-full"
-          src={sbmMap.src}
+          src={Images.sbmMap.src}
           width={2000}
           height={800}
           alt="School Bus Manager rider tracking"

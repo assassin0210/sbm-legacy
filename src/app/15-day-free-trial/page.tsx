@@ -3,12 +3,11 @@ import Image from 'next/image'
 
 import { StartedForm } from '@/app/15-day-free-trial/components/StartedForm'
 import { CheckLong } from '@/assets/icon/checkLong'
+import { Images } from '@/assets/images/images'
 import { ContactInfoSection } from '@/features/ContactInfoSection'
 import { page_links } from '@/shared/constants/page_links'
 import { CustomLink } from '@/shared/ui/CustomLink'
 import { P14, P20, P24, P30, P38 } from '@/shared/ui/Typography'
-
-import computer from '../../assets/images/computer.png'
 
 const DaysFreeTrial = () => {
   const items = [
@@ -125,7 +124,7 @@ const DaysFreeTrial = () => {
             className="max-w-[380px] laptop:max-w-[480px] mx-auto w-full object-cover"
             width={480}
             height={420}
-            src={computer.src}
+            src={Images.computer.src}
             alt="Computer"
           />
           <div className="pt-4 ">
