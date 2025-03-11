@@ -24,7 +24,7 @@ export const WhySchoolBusManager = () => {
 
   return (
     <div
-      className="container py-8 laptop:pt-12 laptop:pb-16 laptop:py-[50px] bg-sbm-white"
+      className="content-block container py-8 laptop:pt-12 laptop:pb-16 laptop:py-[50px] bg-sbm-white"
       id="WHY_SCHOOL_BUS_MANAGER"
     >
       <P38

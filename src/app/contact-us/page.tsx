@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import React from 'react'
 
 import { ContactForm } from '@/app/contact-us/components/contactForm'
+import { MapContainer } from '@/app/contact-us/components/MapContainer'
 import { ContactInfoSection } from '@/features/ContactInfoSection'
 import { P20, P38 } from '@/shared/ui/Typography'
-
-import map from '../../assets/images/contactMap.png'
 
 const ContactUs = () => {
   return (
@@ -27,18 +25,9 @@ const ContactUs = () => {
         </div>
         <ContactForm />
       </section>
+
       <ContactInfoSection className="pb-16 pt-12" title="Contact info" />
-      <section className="min-h-[380px] relative">
-        <div className="absolute inset-0">
-          <Image
-            className="object-cover object-center w-full h-full"
-            src={map}
-            height={526}
-            width={2000}
-            alt="map"
-          />
-        </div>
-      </section>
+      <MapContainer />
     </div>
   )
 }

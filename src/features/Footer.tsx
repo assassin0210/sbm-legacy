@@ -1,8 +1,10 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Facebook } from '@/assets/icon/facebook'
 import { Youtube } from '@/assets/icon/youtube'
+import sbmLogo3 from '@/assets/images/sbm_logo-3.png'
 import { page_links } from '@/shared/constants/page_links'
 import { P12, P14 } from '@/shared/ui/Typography'
 
@@ -25,30 +27,27 @@ export const Footer = () => {
       link: page_links.security,
     },
   ]
+
   return (
-    <footer className=" relative  pt-12  laptop:pt-16 !bg-[#fafafc]">
-      <div className="absolute left-0 top-0 w-full h-full overflow-hidden  ">
-        {/*<Image*/}
-        {/*  className="absolute top-0 left-1/2 min-h-full w-auto min-w-full -translate-x-1/2 object-cover"*/}
-        {/*  src={sbmMap.src}*/}
-        {/*  width={2000}*/}
-        {/*  height={800}*/}
-        {/*  alt="sbm-map"*/}
-        {/*/>*/}
-
-        {/*<div*/}
-        {/*  className="absolute left-0 top-0 w-full h-full"*/}
-        {/*  style={{*/}
-        {/*    background: `linear-gradient(to bottom, ${colors['sbm-secondary']} 45%, transparent 100%)`,*/}
-        {/*  }}*/}
-        {/*></div>*/}
-      </div>
-
-      <div className="relative z-10 container max-w-[1070px] mx-auto pb-12  laptop:pb-12">
+    <footer className=" relative  pt-8  laptop:pt-12 !bg-[#fafafc]">
+      <div className="relative z-10 container max-w-[1070px] mx-auto pb-6  laptop:pb-8 grid grid-cols-[auto_1fr] gap-8">
+        <Link
+          className="relative  flex-shrink-0 h-[42px] flex w-[166px] laptop:w-[180px] mt-1.5"
+          href="/"
+        >
+          <Image
+            className="object-contain "
+            src={sbmLogo3.src}
+            alt="School bus manager"
+            width={233}
+            height={64}
+            priority
+          />
+        </Link>
         <P14
           weight="font-normal"
           color="text-sbm-neutral"
-          className=" maxTablet:text-[12px] maxTablet:!leading-[22px] laptop:leading-[26px] block"
+          className=" maxTablet:text-[12px] !leading-[24px] block"
         >
           School Bus Manager is the simplest school bus routing program on the
           market today. With just a quick import of your student data and
@@ -66,7 +65,7 @@ export const Footer = () => {
           and errors, while increasing your profitability and efficiency.
         </P14>
 
-        <div className="flex items-center justify-center gap-4 mt-12">
+        <div className="flex items-center justify-center gap-4  col-span-2">
           <a
             href="https://www.youtube.com/channel/UCwOHUPXpirAdy3IWJAM9zIQ"
             target="_blank"

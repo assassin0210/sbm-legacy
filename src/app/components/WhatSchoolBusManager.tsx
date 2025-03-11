@@ -4,7 +4,7 @@ export const WhatSchoolBusManager = () => {
   return (
     <section
       id="WHAT_SCHOOL_BUS_MANAGER"
-      className="pt-12 pb-16 laptop:pb-20 laptop:pt-24 bg-sbm-neutral-900 "
+      className="content-block pt-12 pb-16 laptop:pb-20 laptop:pt-24 bg-sbm-neutral-900 "
     >
       <div className="container max-w-[1050px] mx-auto">
         <div className="">
@@ -32,7 +32,7 @@ export const WhatSchoolBusManager = () => {
               </P14>
             </div>
 
-            <div className="w-full tablet:w-full laptop:w-full laptop:max-w-[600px] relative">
+            <div className="w-full tablet:w-full laptop:w-full laptop:max-w-[600px] relative mt-3">
               <iframe
                 title="video"
                 className="w-full mobile:h-[380px]  tablet:h-[500px]   laptop:h-[340px]"

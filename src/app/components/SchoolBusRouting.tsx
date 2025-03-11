@@ -9,7 +9,7 @@ import sbmMap from '../../assets/images/sbm-map.png'
 
 export const SchoolBusRouting = () => {
   return (
-    <section className="relative  overflow-hidden pb-12 h-[800px]  laptop:h-[850px]">
+    <section className="relative  overflow-hidden pb-12 h-[800px]  laptop:h-[850px] ">
       <div className="absolute left-0 top-0 w-full h-[800px]  laptop:h-[850px] overflow-hidden">
         <Image
           className="object-cover object-top  w-full h-full"
@@ -35,7 +35,7 @@ export const SchoolBusRouting = () => {
             as="span"
             weight="font-light"
           >
-            School bus routing, tracking and&nbsp;communication made&nbsp;
+            School bus routing, tracking and&nbsp;communication made
             <span className="relative">
               <span>&nbsp;easy</span>
               <span className="text-[20px] absolute top-[-8px] -right-6">
@@ -63,7 +63,7 @@ export const SchoolBusRouting = () => {
             free 15 day trial
           </CustomLinkV2>
           <CustomLinkV2
-            href="tel:+18886676883"
+            href="/contact-us"
             className="uppercase py-3 h-fit px-8"
             variant="black"
           >

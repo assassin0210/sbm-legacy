@@ -38,13 +38,13 @@ export const ContactInfoSection = ({
           >
             1.888.667.6883
           </CustomLink>
-          <P16
-            className="mt-6"
-            color="text-sbm-neutral-100"
-            weight="font-semibold"
-          >
-            Local: 1.386.882.6218
-          </P16>
+          {/*<P16*/}
+          {/*  className="mt-6"*/}
+          {/*  color="text-sbm-neutral-100"*/}
+          {/*  weight="font-semibold"*/}
+          {/*>*/}
+          {/*  Local: 1.386.882.6218*/}
+          {/*</P16>*/}
         </article>
         <article>
           <P20 color="text-sbm-secondary" weight="font-semibold">

@@ -15,7 +15,7 @@ import { P14, P18, P24, P38 } from '@/shared/ui/Typography'
 export const WhatCanYouDo = () => {
   return (
     <section
-      className="bg-sbm-neutral-800 text-center py-8 laptop:py-16"
+      className="content-block bg-sbm-neutral-800 text-center py-8 laptop:py-16"
       id="FEATURES"
     >
       <div className="container">

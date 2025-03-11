@@ -38,7 +38,7 @@ interface IForm {
   companyName: string
   state: string
   username: string
-  billingPlan: string
+  billingPlan: string | number
   represent: string
   described: string
   captchaToken: string
@@ -58,10 +58,18 @@ const StartedForm_ = () => {
   const pricing = useQuery(queryPricing())
   const schema = useFormSchema()
 
-  const bilingOptions = Object.keys(pricing.data ?? {}).map((key) => ({
-    label: `up to ${pricing.data?.[key].child_limit} riders`,
-    value: key,
-  }))
+  const _bilingOptions = Object.keys(pricing.data ?? {})
+    .map((key) => ({
+      label: `up to ${pricing.data?.[key].child_limit} riders`,
+      value: key,
+      child_limit: pricing.data?.[key].child_limit,
+    }))
+    .sort((a, b) => (a?.child_limit || 0) - (b?.child_limit || 0))
+
+  const bilingOptions = [
+    ..._bilingOptions,
+    { label: 'up to 5000 riders', value: 5000, child_limit: 5000 },
+  ]
 
   const params = useSearchParams()
   const type = params.get('type') as string
@@ -70,10 +78,11 @@ const StartedForm_ = () => {
     if (type) {
       const form = document.getElementById('start-form')
       if (form) {
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        const offsetTop = form.getBoundingClientRect().top + window.scrollY
+        window.scrollTo({ top: offsetTop - 200, behavior: 'smooth' })
       }
     }
-  }, [])
+  }, [type])
 
   const defaultValues: IForm = {
     email: '',
@@ -120,7 +129,7 @@ const StartedForm_ = () => {
       companyName: data.companyName,
       state: data.state,
       username: data.username,
-      billingPlan: data.billingPlan,
+      billingPlan: data.billingPlan as string,
       represent: data.represent,
       described: data.described,
       captchaToken: recaptchaToken,
@@ -247,6 +256,7 @@ const StartedForm_ = () => {
                     I have read the{' '}
                     <Link
                       className="text-sbm-primary underline"
+                      target="_blank"
                       href={page_links.termsOfUse}
                     >
                       Terms of Use
@@ -255,6 +265,7 @@ const StartedForm_ = () => {
                     <Link
                       className="text-sbm-primary underline"
                       href={page_links.eula}
+                      target="_blank"
                     >
                       EULA
                     </Link>{' '}

@@ -4,7 +4,7 @@ import { P30, P38 } from '@/shared/ui/Typography'
 
 export const TailoredMenu = () => {
   return (
-    <section id="PRODUCTS" className="relative">
+    <section id="PRODUCTS" className="content-block relative">
       <div
         className="absolute left-0 top-0 w-full h-full"
         style={{

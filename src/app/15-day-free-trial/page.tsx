@@ -193,7 +193,7 @@ const steps2 = [
   {
     title: 'Start building routes',
     subtitle:
-      'We can teach you how to build routes in 30 minutes or less, output turn-by-turn directions, take attendance, and more!',
+      'We can teach you how to build routes in 60 minutes or less, output turn-by-turn directions, take attendance, and more!',
   },
 ]
 

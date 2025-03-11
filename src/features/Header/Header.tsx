@@ -1,6 +1,7 @@
 'use client'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { clsx } from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'next-nprogress-bar'
@@ -8,7 +9,7 @@ import { useRouter } from 'next-nprogress-bar'
 import { DesktopHeader } from '@/features/Header/DesktopHeader'
 import { MobileHeader } from '@/features/Header/MobileHeader'
 import { page_links } from '@/shared/constants/page_links'
-import { ButtonV2 } from '@/shared/ui/Button'
+import { useNavScroll } from '@/shared/hooks/useMenuActive'
 import { CustomLinkV2 } from '@/shared/ui/CustomLink'
 
 export const handleScrollToSection = async (
@@ -48,55 +49,70 @@ export const FirstLineLinks = ({ isMobile }: { isMobile?: boolean }) => {
     }
   }
 
+  const activeCl = useNavScroll('WHAT_SCHOOL_BUS_MANAGER')
+
   return (
     <>
-      <ButtonV2
+      <button
+        className={clsx(
+          'whitespace-nowrap group text-sbm-neutral-400 font-semibold hover:text-sbm-orange-20 transition ',
+          {
+            '!text-black !font-bold': activeCl === 'WHAT_SCHOOL_BUS_MANAGER',
+          }
+        )}
         onClick={() =>
           handleScrollToSection('WHAT_SCHOOL_BUS_MANAGER', sideEffect)
         }
-        variant="linkBlack"
-        className="normal-case !text-[16px]"
       >
         What’s School Bus Manager
-      </ButtonV2>
-      <ButtonV2
-        className="normal-case !text-[16px]"
+      </button>
+      <button
+        className={clsx(
+          'whitespace-nowrap group text-sbm-neutral-400 font-semibold hover:text-sbm-orange-20 transition',
+          { '!text-black !font-bold': activeCl === 'WHY_SCHOOL_BUS_MANAGER' }
+        )}
         onClick={() =>
           handleScrollToSection('WHY_SCHOOL_BUS_MANAGER', sideEffect)
         }
-        variant="linkGray"
       >
         Why School Bus Manager
-      </ButtonV2>
-      <ButtonV2
-        className="normal-case !text-[16px]"
+      </button>
+      <button
+        className={clsx(
+          'whitespace-nowrap group text-sbm-neutral-400 font-semibold hover:text-sbm-orange-20 transition',
+          { '!text-black !font-bold': activeCl === 'FEATURES' }
+        )}
         onClick={() => handleScrollToSection('FEATURES', sideEffect)}
-        variant="linkGray"
       >
         Features
-      </ButtonV2>
-      <ButtonV2
-        className="normal-case !text-[16px]"
+      </button>
+      <button
+        className={clsx(
+          'whitespace-nowrap group text-sbm-neutral-400 font-semibold hover:text-sbm-orange-20 transition',
+          { '!text-black !font-bold': activeCl === 'PRODUCTS' }
+        )}
         onClick={() => handleScrollToSection('PRODUCTS', sideEffect)}
-        variant="linkGray"
       >
         Products
-      </ButtonV2>
-      <CustomLinkV2
-        className="normal-case !text-[16px]"
-        variant="linkGray"
+      </button>
+
+      <Link
+        className={clsx(
+          'whitespace-nowrap group text-sbm-neutral-400 font-semibold hover:text-sbm-orange-20 transition',
+          { '!text-black !font-bold': pathname.includes('/pricing') }
+        )}
         href={page_links.pricing}
       >
         Pricing
-      </CustomLinkV2>
+      </Link>
+
       {!isMobile ? (
-        <CustomLinkV2
-          // className="normal-case"
-          variant="blue"
+        <Link
+          className="text-sm uppercase whitespace-nowrap font-semibold text-white bg-sbm-blue-10 px-3 py-1.5 rounded-[20px] hover:bg-transparent hover:text-sbm-orange-20 transition"
           href={page_links.trial}
         >
           Free trial
-        </CustomLinkV2>
+        </Link>
       ) : (
         <Link
           className="normal-case font-semibold text-sbm-primary !text-[16px]"

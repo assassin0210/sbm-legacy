@@ -9,7 +9,7 @@ import { P38 } from '@/shared/ui/Typography'
 
 export const DataPartners = () => {
   return (
-    <section className="container my-8 laptop:mt-20 laptop:mb-28">
+    <section className=" container my-8 laptop:mt-20 laptop:mb-28">
       <P38
         weight="font-normal"
         as="h2"
